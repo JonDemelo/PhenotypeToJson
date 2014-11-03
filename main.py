@@ -114,6 +114,7 @@ def main():
 
 		phenoDic[pheno.id] = pheno
 
+	# build the is_a relationship structure
 	for key in phenoDic:
 		is_a_list = phenoDic[key].is_a_string # list of string is_a's
 
@@ -126,7 +127,7 @@ def main():
 			else: # no items yet
 				setattr(phenoDic[key], "is_a", [phenoDic[item]])
 
-	# dump to json
+	# dump to json TODO: Currently not working with the serializer. 
 	json_str = json.dumps(phenoDic["HP:0000001"], sort_keys=True, indent=2)
 	print(json_str)
 
