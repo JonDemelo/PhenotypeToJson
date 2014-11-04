@@ -42,7 +42,7 @@
 
 from pprint import pprint
 import re
-import json
+import jsonpickle
 
 class Phenotype:
 	def __init__(self):
@@ -127,9 +127,13 @@ def main():
 			else: # no items yet
 				setattr(phenoDic[key], "is_a", [phenoDic[item]])
 
-	# dump to json TODO: Currently not working with the serializer. 
-	json_str = json.dumps(phenoDic["HP:0000001"], sort_keys=True, indent=2)
-	print(json_str)
+
+	# dump to json TODO: Need to create root down structure into data.
+
+	test = jsonpickle.encode(phenoDic["HP:0000001"])
+	pprint(test)
+
+	# print(json.dumps(testPheno.__dict__, sort_keys=True, indent=2))
 
 if __name__ == '__main__':
 	main()
