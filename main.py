@@ -43,24 +43,27 @@
 from pprint import pprint
 import re
 import jsonpickle
+import sys
+sys.setrecursionlimit(30000) # 10000 is an example, try with different values
 
 class Phenotype:
 	def __init__(self):
 		# single values
 		self.id = None
 		self.name = None
-		self.defn = None # note the change from def
-		self.created_by = None
-		self.creation_date = None
-		self.property_value = None
-		self.comment = None
+		# self.defn = None # note the change from def
+		# self.created_by = None
+		# self.creation_date = None
+		# self.property_value = None
+		# self.comment = None
 
 		# multi values
-		self.alt_id = []
+		# self.alt_id = []
 		self.is_a_string = []
-		self.is_a = []
-		self.xref = []
-		self.synonym = []
+		# self.is_a = []
+		# self.xref = []
+		# self.synonym = []
+		self.child = [] # added to create tree stucture from data links
 
 # goal is to read through the data dump,
 # extract the terms, fill their attributes
@@ -69,17 +72,19 @@ class Phenotype:
 def main():
 	phenoDic = {}
 	phenoSingleAttrTupleList = [('id', 'id: '),
-						('name', 'name: '),
-						('defn', 'def: '), # note the change in name
-						('created_by', 'created_by: '),
-						('creation_date', 'creation_date: '),
-						('property_value', 'property_value: '), 
-						('comment', 'comment: ')]
+						('name', 'name: ')#,
+						# ('defn', 'def: '), # note the change in name
+						# ('created_by', 'created_by: '),
+						# ('creation_date', 'creation_date: '),
+						# ('property_value', 'property_value: '), 
+						# ('comment', 'comment: ')
+						]
 
-	phenoMultiAttrTupleList = [('alt_id', 'alt_id: '),
+	phenoMultiAttrTupleList = [#('alt_id', 'alt_id: '),
 						('is_a_string', 'is_a: '),
-						('xref', 'xref: '),
-					  	('synonym', 'synonym: ')]
+						# ('xref', 'xref: '),
+						# ('synonym', 'synonym: ')
+						]
 
 	# read into data file				  
 	f = open('hp.obo', 'r')
@@ -114,26 +119,33 @@ def main():
 
 		phenoDic[pheno.id] = pheno
 
-	# build the is_a relationship structure
+	# build the is_a relationship object structure structure
+	# also build the tree structure from the reverse. TODO
 	for key in phenoDic:
 		is_a_list = phenoDic[key].is_a_string # list of string is_a's
+											  # i.e. ["HP:340234 ! fsdf", "..."]	
+		for item in is_a_list: # i.e. "HP:340234 ! fsdf"
+			item = item[:10] # clean the item to just be the HP:0000000
 
-		for item in is_a_list:
-			templist = getattr(phenoDic[key], "is_a")
-			item = item[:10]
+			# templist = getattr(phenoDic[key], "is_a") # retrieve that pheno's is_a
+			# if templist: # if there's items already
+			# 	setattr(phenoDic[key], "is_a", templist + [phenoDic[item]])
+			# else: # no items yet
+			# 	setattr(phenoDic[key], "is_a", [phenoDic[item]])
 
-			if templist: # if there's items already
-				setattr(phenoDic[key], "is_a", templist + [phenoDic[item]])
+			# now go to targetted "super pheno"
+			tempchildlist = getattr(phenoDic[item], "child")
+			if tempchildlist: # if there's children already
+				setattr(phenoDic[item], "child", tempchildlist + [phenoDic[key]])
 			else: # no items yet
-				setattr(phenoDic[key], "is_a", [phenoDic[item]])
-
+				setattr(phenoDic[item], "child", [phenoDic[key]])
 
 	# dump to json TODO: Need to create root down structure into data.
 
 	test = jsonpickle.encode(phenoDic["HP:0000001"])
-	pprint(test)
 
-	# print(json.dumps(testPheno.__dict__, sort_keys=True, indent=2))
+	out = open("data.json", "w+")
+	out.write(test)
 
 if __name__ == '__main__':
 	main()
