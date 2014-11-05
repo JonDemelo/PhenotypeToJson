@@ -63,7 +63,7 @@ class Phenotype:
 		# self.is_a = []
 		# self.xref = []
 		# self.synonym = []
-		self.child = [] # added to create tree stucture from data links
+		self.children = [] # added to create tree stucture from data links
 
 # goal is to read through the data dump,
 # extract the terms, fill their attributes
@@ -134,11 +134,11 @@ def main():
 			# 	setattr(phenoDic[key], "is_a", [phenoDic[item]])
 
 			# now go to targetted "super pheno"
-			tempchildlist = getattr(phenoDic[item], "child")
+			tempchildlist = getattr(phenoDic[item], "children")
 			if tempchildlist: # if there's children already
-				setattr(phenoDic[item], "child", tempchildlist + [phenoDic[key]])
+				setattr(phenoDic[item], "children", tempchildlist + [phenoDic[key]])
 			else: # no items yet
-				setattr(phenoDic[item], "child", [phenoDic[key]])
+				setattr(phenoDic[item], "children", [phenoDic[key]])
 
 	# dump to json TODO: Need to create root down structure into data.
 
