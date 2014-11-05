@@ -143,7 +143,7 @@ def main():
 	# dump to json TODO: Need to create root down structure into data.
 
 	# generate = jsonpickle.encode(phenoDic["HP:0000001"]) # from root All
-	generate = jsonpickle.encode(phenoDic["HP:0000005"]) # from troot Phenotypes
+	generate = jsonpickle.encode(phenoDic["HP:0000118"]) # from troot Phenotypes
 	out = open("data.json", "w+")
 	out.write(generate)
 
