@@ -72,8 +72,8 @@ class Phenotype:
 def main():
 	phenoDic = {}
 	phenoSingleAttrTupleList = [('id', 'id: '),
-						('name', 'name: ')#,
-						# ('defn', 'def: '), # note the change in name
+						('name', 'name: '),#,
+						('defn', 'def: ') # note the change in name
 						# ('created_by', 'created_by: '),
 						# ('creation_date', 'creation_date: '),
 						# ('property_value', 'property_value: '), 
