@@ -51,7 +51,7 @@ class Phenotype:
 		# single values
 		self.id = None
 		self.name = None
-		# self.defn = None # note the change from def
+		self.defn = None # note the change from def
 		# self.created_by = None
 		# self.creation_date = None
 		# self.property_value = None
