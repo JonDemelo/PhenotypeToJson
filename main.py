@@ -117,6 +117,7 @@ def main():
 					else: # no items yet
 						setattr(pheno, func, [item])
 
+		pheno.value = 0;
 		phenoDic[pheno.id] = pheno
 
 	# build the is_a relationship object structure structure

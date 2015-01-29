@@ -1,11 +1,12 @@
 format-version: 1.2
-data-version: releases/2014-12-14
+data-version: releases/2015-01-27
 saved-by: Peter Robinson, Sebastian Koehler, Sandra Doelken, Chris Mungall, Melissa Haendel, Nicole Vasilevsky, Monarch Initiative, et al
 auto-generated-by: OBO-Edit 2.3
 subsetdef: hposlim_core "Core clinical terminology"
 subsetdef: secondary_consequence "Consequence of a disorder in another organ system."
 default-namespace: human_phenotype
 ontology: hp
+owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/HP_0030243> \"\")\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/HP_0000040> \"\")\n)
 logical-definition-view-relation: has_part
 
 [Term]
@@ -257,7 +258,8 @@ is_a: HP:0008669 ! Abnormal spermatogenesis
 id: HP:0000028
 name: Cryptorchidism
 alt_id: HP:0000797
-def: "Absence of one or both testes from the scrotum owing to failure of the testis or testes to descend through the inguinal canal to the testis." [HPO:curators]
+def: "Testis in inguinal canal. That is, absence of one or both testes from the scrotum owing to failure of the testis or testes to descend through the inguinal canal to the testis." [HPO:probinson, pmid:23650202]
+comment: The gonad is mobile and can be retracted superiorly by the cremaster muscle reflex stimulated, for instance, by cold or touch. A retracted testis is not cryptorchidism. An abdominal testis cannot be distinguished by physical examination from an (Apparently) absent testis and requires radiological (or, rarely, surgical) procedures for assessment.
 synonym: "Undescended testes" EXACT []
 synonym: "Undescended testis" EXACT []
 xref: MeSH:D003456 "Cryptorchidism"
@@ -310,7 +312,7 @@ property_value: HP:0040005 "`Ambiguous genitalia` (HP:0000062) in an individual 
 id: HP:0000034
 name: Hydrocele testis
 def: "Accumulation of clear fluid in the  between the layers of membrane (tunica vaginalis) surrounding the testis." [HPO:probinson]
-synonym: "HYDROCELE" BROAD []
+synonym: "Hydrocele" BROAD []
 synonym: "Testicular hydrocele" EXACT []
 xref: MeSH:D006848 "Testicular Hydrocele"
 is_a: HP:0000035 ! Abnormality of the testis
@@ -337,22 +339,26 @@ is_a: HP:0000032 ! Abnormality of male external genitalia
 [Term]
 id: HP:0000039
 name: Epispadias
-def: "Displacement of the urethral opening on the dorsal (superior) surface of the penis." [HPO:curators]
+def: "Displacement of the urethral opening on the dorsal (superior) surface of the penis." [HPO:probinson, pmid:23650202]
+comment: Epispadias may be present in a phenotypic male, female, or an individual with ambiguous genitalia. A meatus in a phenotypic male may be positioned either on the glans (glandular or balanic epispadias), the shaft (penile epispadias) or at the attachment of the penis to the abdominal wall (penopubic epispadias). Alternatively, the urethra may be an open groove along the dorsal shaft of the penis, with no readily recognized meatus. Epispadias is a frequent component of Bladder exstrophy, but should be coded separately.
 xref: MeSH:D004842 "Epispadias"
 xref: UMLS:C0014588 "Epispadias"
 is_a: HP:0100627 ! Displacement of the external urethral meatus
 
 [Term]
 id: HP:0000040
-name: Enlarged penis
-synonym: "Large penis" EXACT []
+name: Long penis
+def: "Penile length more than 2 SD above the mean for age." []
+comment: Penile length is the distance between the midline attachment of the gently stretched, flaccid penis above the pubic symphysis and tip of the glans.
+synonym: "Enlarged penis" EXACT []
 xref: UMLS:C0269011 "Large penis"
 is_a: HP:0000036 ! Abnormality of the penis
 
 [Term]
 id: HP:0000041
 name: Chordee
-def: "A condition in which the head of the penis curves downward." [HPO:curators]
+def: "Ventral, lateral, or ventrolateral bowing of the shaft and glans penis of more than 30 degrees." [HPO:probinson, pmid:23650202]
+comment: The degree of variation of penis curvature is a continuum, but traditionally 30 degrees is considered the threshold for surgical intervention on chordee. Bowing usually becomes more obvious in an erect penis, but is frequently also palpable when stretching a flaccid penis. Chordee can be congenital or acquired; if the former, it can be associated with Webbed Penis or Hypospadias, which should be coded separately.
 xref: UMLS:C0221182 "Chordee"
 is_a: HP:0000036 ! Abnormality of the penis
 
@@ -432,13 +438,13 @@ is_a: HP:0000047 ! Hypospadias
 id: HP:0000052
 name: Urethral atresia, male
 def: "Congenital anomaly characterized by closure or failure to develop an opening in the urethra in males." [HPO:probinson]
-is_a: HP:0000036 ! Abnormality of the penis
 is_a: HP:0000068 ! Urethral atresia
 
 [Term]
 id: HP:0000053
 name: Macroorchidism
 def: "The presence of abnormally large testes." [HPO:probinson]
+synonym: "Large testis" EXACT []
 xref: UMLS:C1263023 "Macroorchidism"
 is_a: HP:0000035 ! Abnormality of the testis
 
@@ -525,9 +531,10 @@ name: Ambiguous genitalia
 alt_id: HP:0008685
 alt_id: HP:0008693
 def: "A genital phenotype that is not clearly assignable to a single gender. Ambiguous genitalia can be evaluated using the Prader scale: Prader 0: Normal female external genitalia. Prader 1: Female external genitalia with clitoromegaly. Prader 2: Clitoromegaly with partial labial fusion forming a funnel-shaped urogenital sinus. Prader 3: Increased phallic enlargement. Complete labioscrotal fusion forming a urogenital sinus with a single opening. Prader 4: Complete scrotal fusion with urogenital opening at the base or on the shaft of the phallus. Prader 5: Normal male external genitalia. The diagnosis of ambiguous genitalia is made for Prader 1-4." [HPO:probinson, pmid:15102623]
-comment: Genetic gender is determined at fertilization, whereby the presence of a Y chromosome determines male gender. Normally, genetic gender determines gonadal gender which in turn determines phenotypic gender. Testicular development is an active process requiring expression of the primary testis determining gene SRY, which is located on the Y chromosome.
+comment: Note that this term can include or combine variations in size and shape, with partial or complete absence of structures. It is preferable to describe the individual components, which are defined below. It is nonetheless a widely used bundled term and as such is retained here. The distinction of this finding from a marked degree of Hypospadias is an example of how this term can be problematic. Genetic gender is determined at fertilization, whereby the presence of a Y chromosome determines male gender. Normally, genetic gender determines gonadal gender which in turn determines phenotypic gender. Testicular development is an active process requiring expression of the primary testis determining gene SRY, which is located on the Y chromosome.
 synonym: "Ambiguous external genitalia" EXACT []
 synonym: "Ambiguous external genitalia at birth" EXACT []
+synonym: "Intersex genitalia" EXACT []
 xref: UMLS:C0266362 "Ambiguous genitalia"
 is_a: HP:0000811 ! Abnormal external genitalia
 
@@ -1652,6 +1659,7 @@ property_value: HP:0040005 "`Uvula` (FMA:55022) separated into two parts most ea
 [Term]
 id: HP:0000194
 name: Open mouth
+def: "A facial appearance characterized by a permanently or nearly permanently opened mouth." [HPO:probinson]
 synonym: "OPEN MOUTH APPEARANCE" RELATED [HPO:skoehler]
 xref: UMLS:C0240379 "Open mouth"
 is_a: HP:0011338 ! Abnormality of mouth shape
@@ -2750,7 +2758,11 @@ is_a: HP:0000290 ! Abnormality of the forehead
 [Term]
 id: HP:0000338
 name: Hypomimic face
-def: "A reduced degree of facial expression." [HPO:probinson]
+alt_id: HP:0008769
+def: "A reduced degree of motion of the muscles beneath the skin of the face, often associated with reduced facial crease formation." [HPO:probinson]
+comment: The movement and position of facial muscles are often interpreted as expressing emotions. Individuals with hypomimic face may be perceived as expressing less emotion than normal.
+synonym: "Dull facial expression" EXACT []
+synonym: "Expressionless face" EXACT []
 xref: UMLS:C1837824 "Hypomimic face"
 is_a: HP:0000301 ! Abnormality of facial musculature
 is_a: HP:0004673 ! Decreased facial expression
@@ -3751,7 +3763,9 @@ property_value: HP:0040005 "An abnormality of the `neck` (FMA:7155)." xsd:string
 [Term]
 id: HP:0000465
 name: Webbed neck
+def: "Pterygium colli is a congenital skin fold that runs along the sides of the neck down to the shoulders. It involves an ectopic fibrotic facial band superficial to the trapezius muscle. Excess hair-bearing skin is also present and extends down the cervical region well beyond the normal hairline." [HPO:probinson, pmid:24523736]
 subset: hposlim_core
+synonym: "Neck webbing" EXACT []
 synonym: "Pterygium colli" EXACT []
 xref: SNOMEDCT:11731003 "Neck webbing"
 xref: UMLS:C0221217 "Pterygium colli"
@@ -3829,7 +3843,6 @@ def: "A thickening of the skin thickness in the posterior aspect of the fetal ne
 comment: A thickened nuchal fold should be distinguished from cystic hygroma, in which the skin in this area has fluid-filled loculations. A thickened nuchal fold should not be confused with nuchal translucency, which is a specific measurement of fluid in the posterior aspect of the neck at 11 to 14 weeks gestation (see practice guidelines at http://www.sogc.org).
 subset: hposlim_core
 synonym: "Excess nuchal skin" EXACT []
-synonym: "Redundant nuchal skin" EXACT []
 xref: UMLS:C1858543 "Redundant nuchal skin"
 is_a: HP:0000464 ! Abnormality of the neck
 is_a: HP:0011425 ! Fetal ultrasound soft marker
@@ -4049,7 +4062,6 @@ alt_id: HP:0007674
 alt_id: HP:0007749
 def: "The presence of recurrent corneal epithelial erosions. Although most corneal epithelial defects heal quickly, some may show recurrent ulcerations." [HPO:curators]
 synonym: "Corneal erosions, recurrent" EXACT []
-synonym: "Corneal ulceration" RELATED []
 synonym: "Corneal ulcerations" EXACT []
 synonym: "Epithelial corneal erosions" RELATED []
 synonym: "Recurrent corneal ulceration" EXACT []
@@ -5003,6 +5015,8 @@ creation_date: 2008-02-27T05:34:00Z
 [Term]
 id: HP:0000600
 name: Abnormality of the pharynx
+def: "An anomaly of the pharynx, i.e., of the tubular structure extending from the base of the skull superiorly to the esophageal inlet inferiorly." [HPO:probinson]
+comment: The pharynx is tubular structure extending from base of skull superiorly\nto esophageal inlet inferiorly, and is composed of three distinct areas: the nasopharynx, the oropharynx, and the hypopharynx, with the pharyngeal walls being composed of the superior, middle, and inferior pharyngeal constrictor muscles. It is part of the digestive system and of the conducting zone of the respiratory system.
 is_a: HP:0000234 ! Abnormality of the head
 
 [Term]
@@ -5019,6 +5033,7 @@ is_a: HP:0100886 ! Abnormality of globe location
 [Term]
 id: HP:0000602
 name: Ophthalmoplegia
+def: "Paralysis of one or more extraocular muscles that are responsible for eye movements." [HPO:probinson]
 xref: MeSH:D009886 "Ophthalmoplegia"
 xref: UMLS:C0029089 "Ophthalmoplegia"
 is_a: HP:0000597 ! Ophthalmoparesis
@@ -5220,6 +5235,7 @@ is_a: HP:0000505 ! Visual impairment
 [Term]
 id: HP:0000623
 name: Supranuclear ophthalmoplegia
+def: "A vertical gaze palsy with inability to direct the gaze of the eyes downwards." [HPO:probinson, pmid:20629667]
 subset: hposlim_core
 xref: UMLS:C1408507 "Supranuclear ophthalmoplegia"
 is_a: HP:0000602 ! Ophthalmoplegia
@@ -6119,7 +6135,6 @@ alt_id: HP:0008758
 alt_id: HP:0008759
 def: "A repetitive behaviour that does not serve an observable goal. In general the movements are not aimed at the environment, but at the person itself. Stereotypical behaviour is seen especially in children with sensory, intellectual and/or cognitive handicaps." [HPO:probinson]
 comment: An abnormality of behavior characterized by one or more stereotyped and restricted patterns of behavior such as inflexible adherence to specific, nonfunctional routines or rituals, stereotyped and repetitive motor mannerisms (e.g., hand or finger flapping or twisting, or complex whole-body movements), or persistent preoccupation with parts of objects.
-synonym: "Perseverative behavior" EXACT []
 synonym: "Stereotyped behavior" EXACT []
 synonym: "STEREOTYPED BEHAVIORS" RELATED [HPO:skoehler]
 synonym: "Stereotyped, repetitive behaviour" EXACT []
@@ -7384,7 +7399,9 @@ is_a: HP:0006710 ! Aplasia/Hypoplasia of the clavicles
 [Term]
 id: HP:0000895
 name: Hooked clavicles
+def: "An excessive upward convexity of the lateral clavicle." [HPO:probinson, pmid:7322653]
 synonym: "Hook-shaped clavicles" EXACT []
+synonym: "Lateral clavicle hook" EXACT []
 xref: UMLS:C0426805 "Hooked clavicles"
 is_a: HP:0000889 ! Abnormality of the clavicles
 
@@ -8119,6 +8136,8 @@ property_value: HP:0040005 "Atypically `scarred` (PATO:0001850) `skin` (FMA:7163
 [Term]
 id: HP:0000988
 name: Skin rash
+def: "A red eruption of the skin." [HPO:probinson]
+synonym: "Exanthem" EXACT []
 xref: MEDRA:10037844 "Rash"
 xref: SNOMEDCT:112625008 "Cutaneous eruption"
 xref: UMLS:C0015230 "Eruption"
@@ -8226,7 +8245,6 @@ synonym: "Abnormal skin pigmentation" EXACT [HPO:skoehler]
 synonym: "Abnormality of pigmentation" EXACT []
 synonym: "Pigmentary changes" EXACT []
 synonym: "Pigmentary skin changes" EXACT []
-synonym: "Pigmentation" EXACT []
 synonym: "Pigmentation anomaly" EXACT []
 xref: UMLS:C1260926 "Abnormal pigmentation"
 xref: UMLS:C1269684 "Skin pigmentation - finding"
@@ -8455,6 +8473,7 @@ is_a: HP:0011121 ! Abnormality of skin morphology
 [Term]
 id: HP:0001030
 name: Fragile skin
+def: "Skin that splits easily with minimal injury." [HPO:probinson]
 subset: hposlim_core
 synonym: "Skin fragility" EXACT []
 xref: MEDRA:10040851 "Skin fragility"
@@ -8793,6 +8812,8 @@ is_a: HP:0011121 ! Abnormality of skin morphology
 [Term]
 id: HP:0001073
 name: Cigarette-paper scars
+def: "Thin (atrophic) and wide scars." [HPO:probinson]
+comment: Cigarette-paper scars are atrophic scars in the skin at sites of minor lacerations over the knees, shins, and elbows.
 subset: hposlim_core
 synonym: "'cigarette paper scarring'" EXACT []
 synonym: "Cigarette paper scarring" EXACT []
@@ -8808,6 +8829,7 @@ is_a: HP:0003764 ! Nevus
 id: HP:0001075
 name: Atrophic scars
 alt_id: HP:0007567
+def: "Scars that form a depression compared to the level of the surrounding skin because of damage to the collagen, fat or other tissues below the skin." [HPO:probinson]
 subset: hposlim_core
 synonym: "Thin, atrophic scars" EXACT []
 xref: SNOMEDCT:409766009 "Atrophic scar"
@@ -9546,7 +9568,6 @@ alt_id: HP:0006182
 alt_id: HP:0009604
 def: "Supernumerary digits located at the radial side of the hand. Polydactyly (supernumerary digits) involving the thumb occurs in many distinct forms of high variability and severity. Ranging from fleshy nubbins over varying degrees of partial duplication/splitting to completely duplicated or even triplicated thumbs or preaxial (on the radial side of the hand) supernumerary digits." [HPO:probinson]
 synonym: "Polydactyly affecting the thumb" EXACT []
-synonym: "Polydactyly, preaxial" EXACT []
 synonym: "Preaxial polydactyly (hands)" EXACT []
 synonym: "thumb polydactyly" EXACT []
 xref: SNOMEDCT:205135003 "Radial polydactyly"
@@ -12617,8 +12638,10 @@ id: HP:0001644
 name: Dilated cardiomyopathy
 alt_id: HP:0001725
 alt_id: HP:0005159
+alt_id: HP:0200130
 def: "Dilated cardiomyopathy (DCM) is defined by the presence of left ventricular dilatation and left ventricular systolic dysfunction in the absence of abnormal loading conditions (hypertension, valve disease) or coronary artery disease sufficient to cause global systolic impairment. Right ventricular dilation and dysfunction may be present but are not necessary for the diagnosis." [pmid:17916581]
 synonym: "Cardiomyopathy, dilated" EXACT []
+synonym: "Congestive cardiomyopathy" EXACT []
 xref: MeSH:D002311 "Cardiomyopathy, Dilated"
 xref: UMLS:C0007193 "Cardiomyopathy, Dilated"
 is_a: HP:0001638 ! Cardiomyopathy
@@ -15561,6 +15584,7 @@ xref: MeSH:D006551 "Hernia, Hiatal"
 xref: SNOMEDCT:84089009 "Hiatal hernia"
 xref: UMLS:C0019291 "Hiatus hernia NOS"
 is_a: HP:0002577 ! Abnormality of the stomach
+is_a: HP:0100790 ! Hernia
 property_value: HP:0040005 "The presence of a `hernia` (MPATH:75) in which the upper part of the stomach, i.e., mainly the `gastric cardia` (FMA:14561) protrudes through the diaphragmatic `esophageal hiatus` (FMA:58289)." xsd:string {xref="HPO:probinson"}
 created_by: peter
 creation_date: 2008-02-20T11:28:00Z
@@ -16268,8 +16292,6 @@ id: HP:0002131
 name: Episodic ataxia
 alt_id: HP:0007152
 def: "Periodic spells of incoordination and imbalance, that is, episodes of ataxia typically lasting from 10 minutes to several hours or days.\n" [HPO:probinson]
-synonym: "Intermittent ataxia" EXACT []
-synonym: "Intermittent cerebellar ataxia" EXACT []
 synonym: "Paroxysmal ataxia" EXACT []
 xref: UMLS:C1856190
 is_a: HP:0001251 ! Ataxia
@@ -16821,6 +16843,7 @@ name: Pleural effusion
 def: "The presence of an excessive amount of fluid in the pleural cavity." [HPO:probinson]
 xref: MeSH:D010996 "Pleural Effusion"
 xref: UMLS:C1253943 "Pleural effusion"
+is_a: HP:0000969 ! Edema
 is_a: HP:0002103 ! Abnormality of the pleura
 property_value: HP:0040005 "The presence of an excessive amount of fluid in the `pleural cavity` (FMA:9740)." xsd:string {xref="HPO:probinson"}
 
@@ -17089,7 +17112,6 @@ id: HP:0002235
 name: Pili canaliculi
 alt_id: HP:0002285
 def: "Uncombable hair." [HPO:probinson]
-synonym: "Uncombable hair" EXACT []
 xref: UMLS:C1860608 "Pili canaliculi"
 is_a: HP:0003328 ! Abnormal hair laboratory examination
 
@@ -18112,7 +18134,7 @@ synonym: "Loss of spinal cord anterior horn cells" EXACT []
 synonym: "Progressive loss of anterior horn cells" EXACT []
 synonym: "Spinal cord anterior horn cell degeneration" EXACT []
 xref: UMLS:C1843505 "Spinal cord anterior horn cell degeneration"
-is_a: HP:0006802 ! Abnormality of the anterior horn cell
+is_a: HP:0006802 ! Abnormal anterior horn cell morphology
 is_a: HP:0007373 ! Motor neuron atrophy
 
 [Term]
@@ -18738,7 +18760,6 @@ alt_id: HP:0002428
 alt_id: HP:0002525
 def: "A sudden and transient episode of bilateral loss of muscle tone, often triggered by emotions." [HPO:probinson, pmid:21931493, pmid:22249574]
 comment: Cataplexy is a frequent feature of narcolepsy, a neurologic disorder characterized by excessive daytime sleepiness and manifestations of disrupted rapid eye movement sleep stage.
-synonym: "Narcolepsy" RELATED []
 xref: MeSH:D002385 "Cataplexy"
 xref: UMLS:C0007384 "Cataplexy"
 is_a: HP:0012638 ! Abnormality of nervous system physiology
@@ -18941,7 +18962,11 @@ is_a: HP:0004404 ! Abnormality of the nipple
 
 [Term]
 id: HP:0002561
-name: Absent nipples
+name: Absent nipple
+def: "Congenital failure to develop, and absence of, the nipple." []
+comment: This finding can be unilateral or bilateral.
+synonym: "Absent nipples" EXACT []
+synonym: "Athelia" EXACT []
 xref: UMLS:C0425795 "Absent nipples"
 is_a: HP:0006709 ! Aplasia/Hypoplasia of the nipples
 
@@ -19243,7 +19268,6 @@ id: HP:0002599
 name: Head titubation
 def: "A head tremor of moderate speed (3 to 4 Hz) in the anterior-posterior direction." [HPO:probinson]
 comment: Titubation often accompanies midline cerebellar lesions. The 3-4 per second frequency of titubation is faster than the head nodding/bobbing that can be seen with thalamic lesions. The original description of head titubation in 1899 by Gowers (see pmid:4821687) was: As the disease progresses, some jerky irregularity develops in the movement\nof the neck and head so that the head presents slight movements, sometimes like an irregular tremor, sometimes simulating chorea.
-synonym: "Titubation" RELATED []
 xref: UMLS:C1608410 "Head titubation"
 is_a: HP:0002346 ! Head tremor
 is_a: HP:0002457 ! Abnormal head movements
@@ -19302,6 +19326,8 @@ is_a: HP:0012700 ! Abnormal large intestine physiology
 [Term]
 id: HP:0002608
 name: Celiac disease
+def: "Celiac disease (CD) is an autoimmune condition affecting the small intestine, triggered by the ingestion of gluten, the protein fraction of wheat, barley, and rye. Clinical manifestations of CD are highly variable and include both gastrointestinal and non-gastrointestinal features. The hallmark of CD is an immune-mediated enteropathy. This term is included because the occurence of CD is seen as a feature of a number of other diseases." [HPO:probinson, pmid:23681421]
+synonym: "Celiac sprue" EXACT []
 xref: MeSH:D002446 "Celiac Disease"
 is_a: HP:0002244 ! Abnormality of the small intestine
 is_a: HP:0100326 ! Immunologic hypersensitivity
@@ -19507,6 +19533,7 @@ is_a: HP:0004418 ! Thrombophlebitis
 [Term]
 id: HP:0002639
 name: Budd-Chiari syndrome
+def: "Budd–Chiari syndrome (BCS) is caused by obstruction of hepatic venous outflow at any level from the small hepatic veins to the junction of the inferior vena cava (IVC) with the right atrium,1 and occurs in 1/100,000 of the general population worldwide. The most common presentation is with ascites, but can range from fulminant hepatic failure (FHF) to asymptomatic forms. Obstruction of hepatic venous outflow is mainly caused by primary intravascular thrombosis, which can occur suddenly or be repeated over time, accompanied by some revascularization, accounting for the variable parenchymal hepatic damage and histologic presentation. Budd-Chiari syndrome is thus a disease, but since it occurs as a manifestation of several other diseases, this term is kept for the present for convenience." [HPO:probinson, pmid:16265183]
 xref: MeSH:D006502 "Budd-Chiari Syndrome"
 xref: UMLS:C0856761 "Budd-Chiari Syndrome"
 is_a: HP:0002624 ! Venous abnormality
@@ -19679,6 +19706,7 @@ name: Neoplasm
 alt_id: HP:0003008
 alt_id: HP:0006741
 def: "An organ or organ-system abnormality that consists of uncontrolled autonomous cell-proliferation which can occur in any part of the body as a benign or malignant neoplasm (tumour)." [HPO:probinson]
+comment: The World Health Organization (WHO) classifies neoplasms into four main groups: (i) benign neoplasm, (ii) in situ neoplasm, (iii) malignant neoplasm, and (iv) neoplasm of uncertain or unknown behavior. A malignant neoplasm is also known as cancer.
 synonym: "Cancer" RELATED []
 synonym: "Neoplasia" EXACT []
 synonym: "Oncological abnormality" EXACT []
@@ -19726,8 +19754,6 @@ alt_id: HP:0002670
 alt_id: HP:0003004
 def: "A carotid body tumor (also called paraganglionoma or chemodectoma) is a tumor found in the upper neck at the branching of the carotid artery. They arise from the chemoreceptor organ (paraganglion) located in the adventitia of the carotid artery bifurcation." [HPO:probinson]
 synonym: "Carotid body tumors" EXACT []
-synonym: "Chemodectoma" EXACT []
-synonym: "Chemodectomas" EXACT []
 synonym: "Paragangliomas" EXACT [HPO:skoehler]
 xref: MeSH:D010235 "Paraganglioma"
 xref: UMLS:C0030421 "chemodectomas"
@@ -20690,6 +20716,8 @@ is_a: HP:0100491 ! Abnormality of lower limb joint
 [Term]
 id: HP:0002816
 name: Genu recurvatum
+def: "An abnormally increased extension of the knee joint, so that the knee can bend backwards." [HPO:probinson, pmid:9580896]
+comment: Individuals with genu recurvatum may experience knee pain, display an extension gait pattern, and have poor proprioceptive control of terminal knee extension.
 subset: hposlim_core
 synonym: "Genu recurvata" EXACT []
 xref: MEDRA:10018194 "Genu recurvatum"
@@ -20756,7 +20784,6 @@ alt_id: HP:0001375
 def: "Displacement of the femur from its normal location in the hip joint." [HPO:probinson]
 synonym: "Dislocated hips" EXACT []
 synonym: "Dislocation of hip" EXACT []
-synonym: "Hip subluxation" EXACT []
 xref: MeSH:D006617 "Hip Dislocation"
 xref: UMLS:C0434785 "Hip subluxation"
 is_a: HP:0001373 ! Joint dislocation
@@ -20817,7 +20844,8 @@ is_a: HP:0002795 ! Functional respiratory abnormality
 [Term]
 id: HP:0002836
 name: Bladder exstrophy
-def: "Eversion of the urinary bladder. This is a congenital anomaly in which part of the bladder is everted outside of the abdominal wall." [HPO:probinson]
+def: "Eversion of the posterior bladder wall through the congenitally absent lower anterior abdominal wall and anterior bladder wall " [HPO:probinson, pmid:23650202]
+comment: Exstrophy of the bladder can be associated with Epispadias and Bifid penis or in females with Bifid clitoris, a bifid uterus, and a Septated vagina, each of which should be coded separately.
 xref: MeSH:D001746 "Bladder exstrophy"
 xref: UMLS:C0005689 "Bladder Exstrophy"
 is_a: HP:0000014 ! Abnormality of the bladder
@@ -21044,14 +21072,14 @@ property_value: HP:0040005 "The presence of a `medullary carcinoma` (MPATH:291) 
 
 [Term]
 id: HP:0002866
-name: Hypoplastic iliac wings
+name: Hypoplastic iliac wing
 alt_id: HP:0003169
 alt_id: HP:0003181
 alt_id: HP:0008837
 def: "Underdevelopment of the ilium ala." [HPO:probinson]
 subset: hposlim_core
 synonym: "Hypoplastic iliac alae" EXACT []
-synonym: "Hypoplastic iliac wing" EXACT []
+synonym: "Hypoplastic iliac wings" EXACT []
 synonym: "Small iliac wings" EXACT []
 xref: UMLS:C1850045 "Hypoplastic iliac wings"
 is_a: HP:0000946 ! Hypoplastic ilia
@@ -21232,7 +21260,7 @@ is_a: HP:0011750 ! Neoplasm of the anterior pituitary
 id: HP:0002894
 name: Neoplasm of the pancreas
 alt_id: HP:0004511
-def: "The presence of a neoplasm of the pancreas." [HPO:probinson]
+def: "A tumor (abnormal growth of tissue) of the pancreas." [HPO:probinson]
 synonym: "Cancer of the pancreas" EXACT []
 synonym: "increased risk of pancreatic cancer" RELATED []
 synonym: "Neoplasia of the pancreas" EXACT []
@@ -21255,7 +21283,7 @@ property_value: HP:0040005 "The presence of a `papillary adenocarcinoma` (MPATH:
 [Term]
 id: HP:0002896
 name: Neoplasm of the liver
-def: "The presence of a neoplasm of the liver." [HPO:probinson]
+def: "A tumor (abnormal growth of tissue) of the liver." [HPO:probinson]
 synonym: "Liver cancer" EXACT []
 xref: UMLS:C0279000 "Liver Cancer"
 is_a: HP:0001392 ! Abnormality of the liver
@@ -21390,6 +21418,7 @@ alt_id: HP:0008295
 def: "Increased concentration of methylmalonic acid in the blood." [HPO:probinson]
 comment: Methylmalonic aciduria is a genetically heterogeneous disorder of methylmalonate and cobalamin (cbl; vitamin B12) metabolism.
 xref: UMLS:C1855119 "Methymalonicaciduria"
+is_a: HP:0001941 ! Acidosis
 is_a: HP:0004341 ! Abnormality of the vitamin B12 metabolism
 is_a: HP:0010995 ! Abnormality of dicarboxylic acid metabolism
 property_value: HP:0040005 "Increased concentration of `methylmalonic acid` (CHEBI:30860) in the blood." xsd:string {xref="HPO:probinson"}
@@ -21979,6 +22008,7 @@ is_a: HP:0006492 ! Aplasia/Hypoplasia of the fibula
 [Term]
 id: HP:0002991
 name: Abnormality of the fibula
+def: "An anomaly of the calf bone (fibula), one of the two bones of the calf." [HPO:probinson]
 subset: hposlim_core
 is_a: HP:0002981 ! Abnormality of the calf
 is_a: HP:0040069 ! Abnormality of lower limb bone
@@ -22432,6 +22462,7 @@ is_a: HP:0002815 ! Abnormality of the knees
 [Term]
 id: HP:0003067
 name: Madelung deformity
+def: "An anomaly related to partial closure, or failure of development of the ulnar side of the distal radial growth plate, which results in an arrest of epiphyseal growth of the medial and volar portions of the distal radius. This leads to shortening of the radius and relative overgrowth of the ulna." [HPO:probinson, pmid:12362035]
 subset: hposlim_core
 synonym: "Madelung wrist deformity" EXACT []
 xref: SNOMEDCT:4530000 "Madelung's deformity"
@@ -22590,6 +22621,7 @@ is_a: HP:0040066 ! Abnormal morphology of bones of the lower limbs
 [Term]
 id: HP:0003086
 name: Acromesomelia
+def: "Small hands and feet." [HPO:probinson, pmid:22286749]
 xref: UMLS:C1864365 "Acromesomelia"
 is_a: HP:0003027 ! Mesomelia
 
@@ -23168,14 +23200,18 @@ property_value: HP:0040005 "An abnormality of the acetabulum, i.e., the `Acetabu
 
 [Term]
 id: HP:0003172
-name: Abnormality of the pubic bones
+name: Abnormality of the pubic bone
+def: "An anomaly of the the pubic bone, i.e., of the ventral and anterior of the three principal components (publis, ilium, ischium) of the hip bone." [HPO:probinson]
 subset: hposlim_core
+synonym: "Abnormality of the pubic bones" EXACT []
+synonym: "Abnormality of the pubis" EXACT []
 is_a: HP:0003272 ! Abnormality of the hip bone
 
 [Term]
 id: HP:0003173
-name: Hypoplastic pubic bones
-synonym: "Hypoplastic pubic bone" EXACT []
+name: Hypoplastic pubic bone
+def: "Underdevelopment of the pubis, which together with the ilium and the ischium, is one of the three bones that make up the hip bone." [HPO:probinson]
+synonym: "Hypoplastic pubic bones" EXACT []
 synonym: "Hypoplastic pubis" EXACT []
 xref: UMLS:C1865030 "Hypoplastic pubic bones"
 is_a: HP:0009104 ! Aplasia/Hypoplasia of the pubic bone
@@ -23256,7 +23292,7 @@ def: "Abnormally increased width of the pubic symphysis is the midline cartilagi
 subset: hposlim_core
 synonym: "Wide symphysis of pubis" EXACT []
 xref: UMLS:C1857190 "Wide pubic symphysis"
-is_a: HP:0003172 ! Abnormality of the pubic bones
+is_a: HP:0003172 ! Abnormality of the pubic bone
 
 [Term]
 id: HP:0003184
@@ -24132,6 +24168,7 @@ is_a: HP:0003312 ! Abnormal form of the vertebral bodies
 [Term]
 id: HP:0003306
 name: Spinal rigidity
+def: "Reduced ability to move the vertebral column with a resulting limitation of neck and trunk flexion." [HPO:probinson, pmid:11601420, pmid:2246660]
 synonym: "Rigid spine" EXACT []
 xref: UMLS:C1858025 "Spinal rigidity"
 is_a: HP:0000925 ! Abnormality of the vertebral column
@@ -24195,8 +24232,8 @@ property_value: HP:0040005 "Developmental hypoplasia of the `dens of the axis` (
 [Term]
 id: HP:0003312
 name: Abnormal form of the vertebral bodies
-synonym: "Abnormally-shaped vertebrae" EXACT []
-synonym: "Round vertebral bodies" EXACT []
+def: "Abnormal morphology of vertebral body." []
+synonym: "Abnormally shaped vertebrae" EXACT []
 xref: UMLS:C1839326 "Abnormally-shaped vertebrae"
 is_a: HP:0003468 ! Abnormality of the vertebrae
 
@@ -24812,6 +24849,7 @@ is_a: HP:0006489 ! Abnormality of the femoral metaphysis
 [Term]
 id: HP:0003413
 name: Atlantoaxial abnormality
+def: "An anomaly of the atlantoaxial joint, i.e., of the joint between the first (atlas) and second (axis) cervical vertebrae." [HPO:probinson]
 is_a: HP:0000925 ! Abnormality of the vertebral column
 
 [Term]
@@ -24877,6 +24915,7 @@ is_a: HP:0000926 ! Platyspondyly
 id: HP:0003422
 name: Vertebral segmentation defect
 alt_id: HP:0005705
+def: "An abnormality related to a defect of vertebral separation during development." [HPO:probinson, pmid:23653580]
 subset: hposlim_core
 synonym: "Abnormal spinal segmentation" EXACT []
 xref: SNOMEDCT:205455005 "Defect of vertebral segmentation"
@@ -25160,6 +25199,8 @@ is_a: HP:0011731 ! Abnormality of circulating cortisol level
 [Term]
 id: HP:0003467
 name: Atlantoaxial instability
+def: "Abnormally increased movement at the junction between the first cervical (atlas) and the second cervical (axis) vertebrae as a result of either a bony or ligamentous anomaly." [HPO:probinson]
+comment: Neurological deficits ensue if the odontoid process, or posterior arch of the atlas, impinges on the spinal cord.
 subset: hposlim_core
 xref: UMLS:C0410653 "Atlantoaxial instability"
 is_a: HP:0003413 ! Atlantoaxial abnormality
@@ -25955,6 +25996,7 @@ is_a: HP:0100854 ! Aplasia of the musculature
 id: HP:0003635
 name: Loss of subcutaneous adipose tissue in limbs
 alt_id: HP:0003757
+def: "Loss (disappearance) of previously present subcutaneous fat tissue in arm or leg." [HPO:probinson]
 subset: hposlim_core
 synonym: "Loss of subcutaneous adipose tissue from extremities" EXACT []
 is_a: HP:0008887 ! Adipose tissue loss
@@ -26745,6 +26787,11 @@ is_a: HP:0010753 ! Midline defect of mandible
 [Term]
 id: HP:0003781
 name: Excessive salivation
+def: "Excessive production of saliva." [HPO:probinson]
+synonym: "Hypersalivation" EXACT []
+synonym: "Ptyalism" EXACT []
+synonym: "Sialorrhea" EXACT []
+xref: MeSH:D012798
 xref: UMLS:C0037036 "Excessive salivation"
 is_a: HP:0100755 ! Abnormality of salivation
 
@@ -27929,6 +27976,7 @@ property_value: HP:0040005 "Increased width of the `ulna` (FMA:23466)." xsd:stri
 id: HP:0003994
 name: Dislocated wrist
 alt_id: HP:0004992
+def: "An injury of the wrist with displacement of any of the eight carpal bones." [HPO:probinson]
 synonym: "Dislocations of the wrists" EXACT []
 xref: MEDRA:10013184 "Dislocation of wrist"
 xref: UMLS:C0159941 "Dislocated wrist"
@@ -28694,6 +28742,7 @@ synonym: "5th finger middle phalangeal hypoplasia" EXACT []
 synonym: "Brachymesophalangism V" EXACT []
 synonym: "Fifth finger mid-phalanx hypoplasia" EXACT []
 synonym: "Hypoplastic fifth finger middle phalanx" EXACT []
+synonym: "Hypoplastic middle phalanx (5th finger)" EXACT []
 synonym: "Hypoplastic/small middle phalanx of the 5th finger" EXACT []
 synonym: "Hypoplastic/small middle phalanx of the little finger" EXACT []
 synonym: "Short middle phalanx of the little finger" EXACT []
@@ -29904,7 +29953,7 @@ creation_date: 2008-03-18T07:35:00Z
 [Term]
 id: HP:0004375
 name: Neoplasm of the nervous system
-def: "A neoplasm affecting the nervous system." [HPO:probinson]
+def: "A tumor (abnormal growth of tissue) of the nervous system." [HPO:probinson]
 synonym: "Neoplasia of the nervous system" RELATED []
 synonym: "Tumor of the nervous system" EXACT [HPO:sdoelken]
 is_a: HP:0011793 ! Neoplasm by anatomical site
@@ -30209,6 +30258,7 @@ creation_date: 2008-03-18T09:20:00Z
 id: HP:0004408
 name: Abnormality of the sense of smell
 alt_id: HP:0004410
+def: "An anomaly in the ability to perceive and distinguish scents (odors)." []
 subset: hposlim_core
 synonym: "Abnormality of olfaction" EXACT []
 synonym: "Smell defect" EXACT []
@@ -31669,8 +31719,10 @@ is_a: HP:0001707 ! Abnormality of the right ventricle
 [Term]
 id: HP:0004763
 name: Paroxysmal supraventricular tachycardia
+alt_id: HP:0004765
 def: "An episodic form of supraventricular tachycardia with abrupt onset and termination." [pmid:18025404]
 comment: PSVT is a term used to denote intermittent supraventricular tachycardia other than atrial fibrillation, atrial flutter and multifocal atrial tachycardia (AT). The major causes are atrioventricular reentrant tachycardia (AVNRT), atrioventricular reentrant tachycardia (AVRT), and sinoatrial node reentrant tachycardia (SNRT).
+synonym: "Episodic supraventricular tachycardia" EXACT []
 xref: UMLS:C0030590 "Paroxysmal supraventricular tachycardia"
 is_a: HP:0004755 ! Supraventricular tachycardia
 
@@ -31679,11 +31731,6 @@ id: HP:0004764
 name: Myxomatous mitral valve degeneration
 def: "Myxomatous mitral valve is defined as the presence of excess leaflet tissue and leaflet thickening greater than 5 mm, resulting in a prolapse greater than 2 mm into the left atrium on parasternal long axis view." [HPO:probinson, pmid:21143934]
 is_a: HP:0001633 ! Abnormality of the mitral valve
-
-[Term]
-id: HP:0004765
-name: Episodic supraventricular tachycardia
-is_a: HP:0004755 ! Supraventricular tachycardia
 
 [Term]
 id: HP:0004768
@@ -31727,7 +31774,7 @@ name: Duodenal polyposis
 def: "Presence of multiple polyps in the duodenum." [HPO:probinson]
 synonym: "Multiple duodenal polyps" EXACT []
 xref: UMLS:C0940442 "Multiple duodenal polyps"
-is_a: HP:0200008 ! Intestinal polyposis
+is_a: HP:0030256 ! Small intestinal polyposis
 
 [Term]
 id: HP:0004784
@@ -32391,6 +32438,7 @@ property_value: HP:0040005 "`Recurrent` (PATO:0000427) episodes of `decreased co
 id: HP:0004915
 name: Impairment of galactose metabolism
 def: "An impairment of galactose metabolism." [HPO:probinson]
+synonym: "Impaired galactose metabolism" EXACT [HPO:skoehler]
 is_a: HP:0011013 ! Abnormality of carbohydrate metabolism/homeostasis
 property_value: HP:0040005 "An impairment of `galactose metabolism` (GO:0006012)." xsd:string {xref="HPO:probinson"}
 
@@ -33863,8 +33911,8 @@ xref: MEDRA:10056981 "Adenomatous polyposis coli"
 xref: MeSH:D011125 "Adenomatous Polyposis Coli"
 xref: SNOMEDCT:70921007 "Adenomatous polyposis coli"
 xref: UMLS:C1868071 "Multiple colonic adenomatous polyps"
+is_a: HP:0030255 ! Large intestinal polyposis
 is_a: HP:0100273 ! Neoplasm of the colon
-is_a: HP:0200008 ! Intestinal polyposis
 
 [Term]
 id: HP:0005229
@@ -33937,7 +33985,7 @@ property_value: HP:0040005 "The presence of `degenerative` (PATO:0000639) change
 id: HP:0005238
 name: Discrete intestinal polyps
 xref: UMLS:C0021846 "Intestinal Polyps"
-is_a: HP:0005266 ! Intestinal polyp
+is_a: HP:0200008 ! Intestinal polyposis
 
 [Term]
 id: HP:0005240
@@ -36147,6 +36195,7 @@ is_a: HP:0011001 ! Increased bone mineral density
 id: HP:0005701
 name: Multiple enchondromatosis
 is_a: HP:0002763 ! Abnormal cartilage morphology
+is_a: HP:0030038 ! Enchondroma
 
 [Term]
 id: HP:0005707
@@ -37302,6 +37351,9 @@ id: HP:0005989
 name: Redundant neck skin
 alt_id: HP:0005993
 alt_id: HP:0005996
+def: "Excess skin around the neck, often lying in horizontal folds." [pmid:19125436]
+comment: With age and increased vertical growth of the neck, excess nuchal skin may disappear and the neck may become broad or webbed. If the skin folds are vertical or paravertical, the term Neck webbing should be used.
+synonym: "Redundant nuchal skin" EXACT []
 synonym: "Redundant skin folds of neck" EXACT []
 synonym: "Redundant skin over the neck" EXACT []
 xref: UMLS:C1840319 "Redundant neck skin"
@@ -39615,6 +39667,9 @@ is_a: HP:0002088 ! Abnormality of the lung
 [Term]
 id: HP:0006527
 name: Lymphoid interstitial pneumonia
+def: "A lymphocyte-predominant infiltration of the lungs characterized by bibasilar pulmonary infiltrates with dense interstitial accumulations of lymphocytes and plasma cells." [HPO:probinson]
+comment: Associated clinical manifestations often include fever, cough, and shortness of breath.
+synonym: "Lymphoid interstitial pneumonitis" EXACT []
 xref: UMLS:C0264511 "Lymphoid interstitial pneumonia"
 is_a: HP:0006530 ! Interstitial pulmonary disease
 
@@ -40715,7 +40770,7 @@ is_a: HP:0001067 ! Neurofibromas
 [Term]
 id: HP:0006753
 name: Neoplasm of the stomach
-def: "The presence of a neoplasm of the stomach." [HPO:probinson]
+def: "A tumor (abnormal growth of tissue) of the stomach." [HPO:probinson]
 synonym: "Increased gastric cancer" RELATED []
 synonym: "Neoplasia of the stomach" RELATED []
 is_a: HP:0002577 ! Abnormality of the stomach
@@ -40902,6 +40957,7 @@ alt_id: HP:0009066
 def: "Muscular dystrophy affecting the muscles of the limb girdle (the hips and shoulders)." [HPO:curators]
 xref: MeSH:D049288 "Muscular Dystrophies, Limb-Girdle"
 xref: UMLS:C0686353 "Limb-girdle muscular dystrophy"
+is_a: HP:0003560 ! Muscular dystrophy
 is_a: HP:0003797 ! Limb-girdle muscle atrophy
 
 [Term]
@@ -40940,14 +40996,16 @@ is_a: HP:0001347 ! Hyperreflexia
 
 [Term]
 id: HP:0006802
-name: Abnormality of the anterior horn cell
+name: Abnormal anterior horn cell morphology
 def: "Any anomaly of the anterior horn cell." [HPO:probinson]
 comment: Anterior horn cells are efferent neurons that passes from the central nervous system or a ganglion toward or to a muscle. They conduct nerve impulses that lead to movement of muscles.
+synonym: "Abnormality of the anterior horn cell" BROAD []
 synonym: "Abnormality of the anterior horn cells" EXACT []
 synonym: "Anomaly of the anterior horn cells" EXACT []
 synonym: "Anterior horn cell disease" EXACT []
 xref: UMLS:C0154681 "Anterior Horn Cell Disease"
 is_a: HP:0000759 ! Abnormal peripheral nervous system morphology
+is_a: HP:0002450 ! Abnormal motor neuron morphology
 property_value: HP:0040005 "Any anomaly of the `anterior horn cell` (CL:0000100)." xsd:string {xref="HPO:probinson"}
 
 [Term]
@@ -42180,8 +42238,9 @@ is_a: HP:0007305 ! CNS demyelination
 
 [Term]
 id: HP:0007163
-name: Corticospinal tract disease in lower limbs
-is_a: HP:0002493 ! Upper motor neuron dysfunction
+name: obsolete Corticospinal tract disease in lower limbs
+is_obsolete: true
+consider: HP:0007256
 
 [Term]
 id: HP:0007164
@@ -42451,7 +42510,6 @@ comment: Presence of these signs can indicate affection of the corticospinal (py
 synonym: "Abnormal pyramidal signs" EXACT []
 synonym: "Corticospinal signs" EXACT []
 synonym: "PYRAMIDAL SIGNS" EXACT []
-synonym: "Pyramidal tract dysfunction" EXACT []
 synonym: "Pyramidal tract signs" EXACT []
 xref: UMLS:C0234132 "Pyramidal signs"
 is_a: HP:0002493 ! Upper motor neuron dysfunction
@@ -43031,7 +43089,7 @@ creation_date: 2008-04-01T11:23:00Z
 [Term]
 id: HP:0007378
 name: Neoplasm of the gastrointestinal tract
-def: "The presence of a neoplasm of the gastrointestinal tract." [HPO:probinson]
+def: "A tumor (abnormal growth of tissue) of the gastrointestinal tract." [HPO:probinson]
 synonym: "Gastrointestinal tract neoplasia" EXACT []
 synonym: "Gastrointestinal tract neoplasm" EXACT []
 synonym: "Gastrointestinal tract tumor" EXACT []
@@ -43044,7 +43102,7 @@ creation_date: 2008-04-01T11:55:00Z
 [Term]
 id: HP:0007379
 name: Neoplasm of the genitourinary tract
-def: "The presence of a neoplasm of the genitourinary system." [HPO:probinson]
+def: "A tumor (abnormal growth of tissue) of the genitourinary system." [HPO:probinson]
 synonym: "Genitourinary tract neoplasia" RELATED []
 synonym: "Genitourinary tract neoplasm" EXACT []
 synonym: "Genitourinary tract tumors" EXACT []
@@ -44128,6 +44186,7 @@ is_a: HP:0001000 ! Abnormality of skin pigmentation
 [Term]
 id: HP:0007618
 name: Subcutaneous calcification
+def: "Deposition of calcium salts in subcutaneous tissue (i.e., the the lowermost layer of the integument)." [HPO:probinson]
 subset: hposlim_core
 xref: SNOMEDCT:17141001 "Subcutaneous calcification"
 xref: UMLS:C0263625 "Subcutaneous calcification"
@@ -45067,6 +45126,9 @@ is_a: HP:0001147 ! Retinal exudate
 [Term]
 id: HP:0007824
 name: Total ophthalmoplegia
+def: "Paralysis of both the extrinsic and intrinsic ocular muscles." [HPO:probinson]
+synonym: "Complete ophthalmoplegia" EXACT []
+synonym: "Total internal and external ophthalmoplegia" EXACT []
 xref: UMLS:C0155338 "Total ophthalmoplegia"
 is_a: HP:0000602 ! Ophthalmoplegia
 
@@ -45956,6 +46018,7 @@ id: HP:0008030
 name: Retinal arteritis
 xref: UMLS:C0271069 "Retinal arteritis"
 is_a: HP:0000630 ! Abnormality of retinal arteries
+is_a: HP:0012089 ! Arteritis
 
 [Term]
 id: HP:0008031
@@ -46078,6 +46141,7 @@ creation_date: 2008-04-02T12:14:00Z
 [Term]
 id: HP:0008050
 name: Abnormality of the palpebral fissures
+def: "An anomaly of the space between the medial and lateral canthi of the two open eyelids." [HPO:probinson]
 is_a: HP:0000492 ! Abnormality of the eyelid
 created_by: peter
 creation_date: 2008-04-02T01:22:00Z
@@ -46249,10 +46313,11 @@ creation_date: 2008-04-02T03:56:00Z
 [Term]
 id: HP:0008069
 name: Neoplasm of the skin
-def: "A neoplasm of the skin." [HPO:probinson]
+def: "A tumor (abnormal growth of tissue) of the skin." [HPO:probinson]
 subset: hposlim_core
 synonym: "Dermatological tumors" EXACT [HPO:sdoelken]
 synonym: "Neoplasia of the skin" RELATED []
+synonym: "Skin cancer" RELATED [HPO:skoehler]
 synonym: "Skin tumors" EXACT []
 synonym: "Tumor of the skin" EXACT []
 xref: SNOMEDCT:126488004 "Neoplasm of skin"
@@ -47722,8 +47787,6 @@ is_a: HP:0100803 ! Abnormality of the periungual region
 id: HP:0008400
 name: Onycholysis of distal fingernails
 def: "Detachment of the distal fingernails from the nail bed." [HPO:probinson]
-synonym: "ONYCHOLYSIS OF FINGERNAIL" RELATED [HPO:skoehler]
-synonym: "ONYCHOLYSIS OF FINGERNAILS" RELATED [HPO:skoehler]
 is_a: HP:0040039 ! Onycholysis of fingernails
 
 [Term]
@@ -49308,12 +49371,6 @@ xref: UMLS:C0474420 "Inappropriate sexual behavior"
 is_a: HP:0000719 ! Inappropriate behavior
 
 [Term]
-id: HP:0008769
-name: Dull facial expression
-xref: UMLS:C1838028 "Dull facial expression"
-is_a: HP:0004673 ! Decreased facial expression
-
-[Term]
 id: HP:0008770
 name: Obsessive-compulsive trait
 alt_id: HP:0008761
@@ -49479,7 +49536,7 @@ property_value: HP:0040005 "Developmental acceleration of ossification of the `p
 [Term]
 id: HP:0008798
 name: Widened, small sacrosciatic notches
-is_a: HP:0003185 ! Small sacroiliac notches
+is_a: HP:0005107 ! Abnormality of the sacrum
 
 [Term]
 id: HP:0008800
@@ -49599,14 +49656,14 @@ id: HP:0008822
 name: Hypoplastic ischiopubic rami
 def: "Underdevelopment of the ischiopubic ramus, which is comprised of the inferior pubic ramus and the inferior ramus of the ischium." [HPO:probinson]
 xref: UMLS:C1855893 "Hypoplastic ischiopubic rami"
-is_a: HP:0003173 ! Hypoplastic pubic bones
+is_a: HP:0003173 ! Hypoplastic pubic bone
 is_a: HP:0003175 ! Hypoplastic ischia
 
 [Term]
 id: HP:0008823
 name: Hypoplastic inferior pubic rami
 xref: UMLS:C1853573 "Hypoplastic inferior pubic rami"
-is_a: HP:0003173 ! Hypoplastic pubic bones
+is_a: HP:0003173 ! Hypoplastic pubic bone
 
 [Term]
 id: HP:0008824
@@ -49654,7 +49711,7 @@ property_value: HP:0040005 "Delayed ossification of the `femoral head` (FMA:3285
 id: HP:0008830
 name: Hypoplastic pubic rami
 xref: UMLS:C1969176 "Hypoplastic pubic rami"
-is_a: HP:0003173 ! Hypoplastic pubic bones
+is_a: HP:0003173 ! Hypoplastic pubic bone
 
 [Term]
 id: HP:0008833
@@ -50362,12 +50419,13 @@ is_a: HP:0003712 ! Skeletal muscle hypertrophy
 
 [Term]
 id: HP:0009044
-name: Hypoplasia of deltoid muscle
+name: obsolete Hypoplasia of deltoid muscle
 alt_id: HP:0009039
 def: "Underdevelopment of the deltoid muscle." [HPO:curators]
 synonym: "Deltoid muscle hypoplasia" EXACT []
 xref: UMLS:C1868170 "Deltoid muscle hypoplasia"
-is_a: HP:0001464 ! Aplasia/Hypoplasia involving the shoulder musculature
+is_obsolete: true
+replaced_by: HP:0030241
 
 [Term]
 id: HP:0009045
@@ -50546,10 +50604,11 @@ id: HP:0009085
 name: Alveolar ridge overgrowth
 alt_id: HP:0009078
 alt_id: HP:0009083
-def: "Increased width of the alveolar ridges ." [pmid:19125428]
+def: "Increased width of the alveolar ridges." [pmid:19125428]
 comment: This finding may or may not be accompanied by increased height of the alveolar ridge. This is not to be confused with Prominent palatal ridges or gingival overgrowth. This distinction of gingival from alveolar ridge overgrowth may be difficult, especially in milder degrees of the finding.
 subset: hposlim_core
 synonym: "Hypertrophied alveolar ridge" RELATED []
+synonym: "Overgrowth of alveolar ridge" EXACT []
 synonym: "Thick alveolar ridges" EXACT []
 synonym: "Thickened alveolar ridges" EXACT []
 xref: UMLS:C1850042 "Thickened alveolar ridges"
@@ -50631,7 +50690,7 @@ name: Aplasia/Hypoplasia of the pubic bone
 alt_id: HP:0008841
 def: "Absence or underdevelopment of the pubic bone." [HPO:probinson]
 synonym: "Hypoplastic/aplastic pubic bones" EXACT []
-is_a: HP:0003172 ! Abnormality of the pubic bones
+is_a: HP:0003172 ! Abnormality of the pubic bone
 is_a: HP:0009103 ! Aplasia/Hypoplasia involving the pelvis
 created_by: peter
 creation_date: 2008-04-04T08:41:00Z
@@ -50640,7 +50699,7 @@ creation_date: 2008-04-04T08:41:00Z
 id: HP:0009105
 name: Abnormal ossification of the pubic bone
 def: "Abnormal ossification (bone tissue formation) affecting the pubic bone, also known as the pubis." [HPO:probinson]
-is_a: HP:0003172 ! Abnormality of the pubic bones
+is_a: HP:0003172 ! Abnormality of the pubic bone
 is_a: HP:0009106 ! Abnormal pelvis bone ossification
 property_value: HP:0040005 "Abnormal ossification (bone tissue formation) affecting the pubic bone, also known as the `pubis` (FMA:16595)." xsd:string {xref="HPO:probinson"}
 created_by: peter
@@ -55038,6 +55097,7 @@ id: HP:0009568
 name: Aplasia/Hypoplasia of the middle phalanx of the 2nd finger
 alt_id: HP:0006221
 synonym: "Absent/hypoplastic middle phalanx of 2nd finger" EXACT []
+synonym: "Hypoplastic/aplastic middle phalanx (2nd finger)" EXACT []
 is_a: HP:0009543 ! Abnormality of the middle phalanx of the 2nd finger
 is_a: HP:0009552 ! Aplasia/Hypoplasia of the phalanges of the 2nd finger
 created_by: doelkens
@@ -57479,6 +57539,7 @@ creation_date: 2009-02-23T04:57:56Z
 id: HP:0009811
 name: Abnormality of the elbow
 alt_id: HP:0002966
+def: "An anomaly of the joint that connects the upper and the lower arm." [HPO:probinson]
 subset: hposlim_core
 synonym: "Abnormality of the elbows" EXACT []
 is_a: HP:0009810 ! Abnormality of upper limb joint
@@ -58195,6 +58256,7 @@ creation_date: 2009-04-30T10:07:39Z
 [Term]
 id: HP:0009894
 name: Thickened ears
+def: "Increased thickness of the external ear." []
 subset: hposlim_core
 is_a: HP:0000377 ! Abnormality of the pinna
 created_by: peter
@@ -62109,6 +62171,7 @@ name: Abnormality of dentin
 def: "Any abnormality of dentin." [HPO:probinson]
 comment: Dentin is a calcified tissue of teeth that is covered by enamel on the crown and cementum on the root and surrounds the entire pulp.
 subset: hposlim_core
+synonym: "Abnormal dentin" EXACT [HPO:skoehler]
 is_a: HP:0011061 ! Abnormality of dental structure
 property_value: HP:0040005 "Any abnormality of `dentin` (FMA:55628)." xsd:string {xref="HPO:probinson"}
 created_by: peter
@@ -63571,6 +63634,7 @@ creation_date: 2009-09-14T11:15:40Z
 [Term]
 id: HP:0010455
 name: Steep acetabular roof
+def: "An exageration of the normal arched form of the acetabular roof such that it takes on a steep appearance." [HPO:probinson]
 is_a: HP:0003170 ! Abnormality of the acetabulum
 created_by: peter
 creation_date: 2009-09-14T11:18:20Z
@@ -64969,7 +65033,7 @@ id: HP:0010610
 name: Palmar pits
 xref: UMLS:C0423776 "Palmar pits"
 is_a: HP:0005922 ! Abnormal hand morphology
-is_a: HP:0100276 ! Skin pits
+is_a: HP:0100276 ! Skin pit
 created_by: sandra1
 creation_date: 2009-10-28T01:23:05Z
 
@@ -64978,7 +65042,7 @@ id: HP:0010612
 name: Plantar pits
 def: "The presence of multiple pits (small, pinpoint-large indentations on the surface of the skin) located on the skin of sole of foot." [HPO:probinson]
 xref: UMLS:C1852301 "Plantar pits"
-is_a: HP:0100276 ! Skin pits
+is_a: HP:0100276 ! Skin pit
 is_a: HP:0100872 ! Abnormality of the plantar skin of foot
 property_value: HP:0040005 "The presence of multiple pits (small, pinpoint-large indentations on the surface of the skin) located on the `skin of sole of foot` (FMA:37849)." xsd:string {xref="HPO:probinson"}
 created_by: sandra1
@@ -65083,7 +65147,7 @@ creation_date: 2009-11-18T10:32:21Z
 [Term]
 id: HP:0010622
 name: Neoplasm of the skeletal system
-def: "A benign or malignant neoplasm (tumour) originating in the skeleton." [HPO:probinson]
+def: "A tumor (abnormal growth of tissue) of the skeleton." [HPO:probinson]
 synonym: "Neoplasia of the skeletal system" NARROW []
 is_a: HP:0011793 ! Neoplasm by anatomical site
 is_a: HP:0011842 ! Abnormality of skeletal morphology
@@ -66654,7 +66718,7 @@ creation_date: 2010-04-30T11:40:43Z
 [Term]
 id: HP:0010784
 name: Uterine neoplasm
-def: "A neoplasm of the uterus." [HPO:probinson]
+def: "A tumor (abnormal growth of tissue) of the uterus." [HPO:probinson]
 synonym: "Uterine neoplasia" RELATED []
 xref: MeSH:D014594 "Uterine Neoplasms"
 xref: UMLS:C0042138 "Neoplasm, Uterine"
@@ -66667,7 +66731,7 @@ creation_date: 2010-05-04T09:35:15Z
 [Term]
 id: HP:0010785
 name: Gonadal neoplasm
-def: "The presence of a neoplasm of a gonad." [HPO:probinson]
+def: "A tumor (abnormal growth of tissue) of a gonad." [HPO:probinson]
 synonym: "Gonadal neoplasia" EXACT []
 is_a: HP:0010787 ! Genital neoplasm
 property_value: HP:0040005 "The presence of a `neoplasm` (MPATH:218) of a `gonad` (FMA:18250)." xsd:string {xref="HPO:probinson"}
@@ -66688,7 +66752,7 @@ creation_date: 2010-05-04T09:45:25Z
 [Term]
 id: HP:0010787
 name: Genital neoplasm
-def: "The presence of a neoplasm of the genital system." [HPO:probinson]
+def: "A tumor (abnormal growth of tissue) of the genital system." [HPO:probinson]
 synonym: "Genital neoplasia" RELATED []
 xref: UMLS:C0679347 "genital neoplasm"
 is_a: HP:0000078 ! Abnormality of the genital system
@@ -72298,6 +72362,8 @@ creation_date: 2012-03-09T04:58:30Z
 [Term]
 id: HP:0011390
 name: Morphological abnormality of the inner ear
+def: "A structural anomaly of the internal part of the ear." [HPO:probinson]
+comment: The inner ear contains the cochlea and the semicircular canals.
 is_a: HP:0000359 ! Abnormality of the inner ear
 created_by: hecht
 creation_date: 2012-03-09T04:59:24Z
@@ -75439,7 +75505,7 @@ creation_date: 2012-04-22T01:09:54Z
 [Term]
 id: HP:0011750
 name: Neoplasm of the anterior pituitary
-def: "The presence of a neoplasm (tumour) in the adenohypophysis, which is also known as the anterior lobe of the pituitary gland." [DDD:spark]
+def: "A tumor (abnormal growth of tissue) of the adenohypophysis, which is also known as the anterior lobe of the pituitary gland." [DDD:spark]
 xref: MeSH:D010911 "Pituitary Neoplasms"
 is_a: HP:0011747 ! Abnormality of the anterior pituitary
 is_a: HP:0100568 ! Neoplasm of the endocrine system
@@ -75879,6 +75945,7 @@ creation_date: 2012-04-24T07:59:05Z
 [Term]
 id: HP:0011802
 name: Hamartoma of tongue
+def: "A benign (noncancerous) tumorlike malformation made up of an abnormal mixture of cells and tissues that originates in the tongue." [HPO:probinson, pmid:17667541]
 is_a: HP:0100648 ! Neoplasm of the tongue
 created_by: peter
 creation_date: 2012-04-24T08:02:16Z
@@ -79311,7 +79378,7 @@ creation_date: 2013-02-23T10:28:31Z
 id: HP:0012183
 name: Hyperplastic colonic polyposis
 def: "Presence of multiple hyperplastic polyps in the colon. Hyperplastic polyps are generally about 5 mm in size and show hyperplastic mucosal proliferation." [HPO:probinson]
-is_a: HP:0200008 ! Intestinal polyposis
+is_a: HP:0030255 ! Large intestinal polyposis
 created_by: peter
 creation_date: 2013-02-24T09:08:55Z
 
@@ -79448,7 +79515,7 @@ id: HP:0012198
 name: Juvenile colonic polyposis
 def: "The presence of more than 5 juvenile polyps of the colon." [HPO:probinson]
 comment: A juvenile polyp is a hamartomatous growth that projects from the lining of the intestine. It does not arise from the colonocytes themselves but from the tissues underneath the lining cells.
-is_a: HP:0200008 ! Intestinal polyposis
+is_a: HP:0030255 ! Large intestinal polyposis
 created_by: peter
 creation_date: 2013-03-11T07:09:42Z
 
@@ -80274,7 +80341,7 @@ creation_date: 2013-04-09T07:54:46Z
 [Term]
 id: HP:0012288
 name: Neoplasm of head and neck
-def: "A neoplasm of the head and neck region with origin in the lip, oral cavity, nasal cavity, paranasal sinuses, pharynx, and larynx." [HPO:probinson]
+def: "A tumor (abnormal growth of tissue) of the head and neck region with origin in the lip, oral cavity, nasal cavity, paranasal sinuses, pharynx, or larynx." [HPO:probinson]
 synonym: "Head and neck cancer" RELATED []
 xref: MeSH:D006258 "Head and Neck Neoplasms"
 is_a: HP:0011793 ! Neoplasm by anatomical site
@@ -80284,7 +80351,7 @@ creation_date: 2013-04-11T05:44:24Z
 [Term]
 id: HP:0012289
 name: Facial neoplasm
-def: "A neoplasm of the face." [HPO:probinson]
+def: "A tumor (abnormal growth of tissue) of the face." [HPO:probinson]
 xref: MeSH:D005153 "Facial Neoplasms"
 is_a: HP:0012288 ! Neoplasm of head and neck
 created_by: peter
@@ -80293,7 +80360,7 @@ creation_date: 2013-04-11T05:46:35Z
 [Term]
 id: HP:0012290
 name: Mouth neoplasm
-def: "A neoplasm of the mouth." [HPO:probinson]
+def: "A tumor (abnormal growth of tissue) of the mouth." [HPO:probinson]
 xref: MeSH:D009062 "Mouth Neoplasms"
 is_a: HP:0012288 ! Neoplasm of head and neck
 created_by: peter
@@ -81502,6 +81569,9 @@ creation_date: 2013-11-10T06:01:40Z
 id: HP:0012421
 name: Congenital absence of foreskin
 def: "Congenital lack of the skin of prepuce of penis, that is, of the double-layered fold of skin and mucous membrane that covers the glans penis." [HPO:probinson]
+comment: Absence of the foreskin can be accompanied by Cryptorchidism and Hypospadias, which should be coded separately.
+synonym: "Absent foreskin" EXACT []
+synonym: "Aposthia" EXACT []
 is_a: HP:0100587 ! Abnormality of the preputium
 property_value: HP:0040005 "Congenital lack of the `skin of prepuce of penis` (FMA:27648), that is, of the double-layered fold of skin and mucous membrane that covers the glans penis." xsd:string {xref="HPO:probinson"}
 created_by: peter
@@ -84416,6 +84486,7 @@ creation_date: 2014-03-23T04:47:40Z
 id: HP:0012743
 name: Abdominal obesity
 def: "Excessive fat around the stomach and abdomen." [HPO:probinson]
+synonym: "Central obesity" EXACT [HPO:skoehler]
 is_a: HP:0001513 ! Obesity
 created_by: peter
 creation_date: 2014-03-23T05:00:05Z
@@ -84703,7 +84774,7 @@ creation_date: 2014-04-07T04:00:10Z
 [Term]
 id: HP:0012777
 name: Retinal neoplasm
-def: "The presence of a neoplasm of the retina." [CINEAS:asollie]
+def: "A tumor (abnormal growth of tissue) of the retina." [CINEAS:asollie]
 is_a: HP:0000479 ! Abnormality of the retina
 is_a: HP:0100012 ! Neoplasm of the eye
 property_value: HP:0040005 "The presence of a `neoplasm` (MPATH:218) of the retina." xsd:string {xref="CINEAS:asollie"}
@@ -84731,7 +84802,7 @@ creation_date: 2014-04-07T06:09:19Z
 [Term]
 id: HP:0012780
 name: Neoplasm of the ear
-def: "A neoplasm  of the ear." [HPO:probinson]
+def: "A tumor (abnormal growth of tissue) of the ear." [HPO:probinson]
 is_a: HP:0000598 ! Abnormality of the ear
 is_a: HP:0011793 ! Neoplasm by anatomical site
 property_value: HP:0040005 "A neoplasm` (MPATH:218)  of the ear." xsd:string {xref="HPO:probinson"}
@@ -86133,7 +86204,6 @@ is_a: HP:0012211 ! Abnormal renal physiology
 id: HP:0030037
 name: Bifid ureter
 def: "Incomplete duplication of the ureter." []
-synonym: "Ureter fissus" EXACT []
 xref: pmid:23513084
 is_a: HP:0000073 ! Ureteral duplication
 
@@ -86387,6 +86457,7 @@ replaced_by: HP:0100638
 id: HP:0030074
 name: Chemodectoma
 def: "A usually benign neoplasm originating in the chemoreceptor tissue of the cartodi body, glomus jugulare, glomus tympanicum, aortic bodies, or the female genital tract." []
+synonym: "Chemodectomas" EXACT []
 xref: MeSH:D010236
 is_a: HP:0002668 ! Paraganglioma
 
@@ -86876,15 +86947,16 @@ is_a: HP:0012440 ! Abnormal biliary tract morphology
 
 [Term]
 id: HP:0030152
-name: Biliary tract neoplasm
+name: obsolete Biliary tract neoplasm
 def: "Tumor or cancer originating in the biliary tract." []
-is_a: HP:0001080 ! Biliary tract abnormality
+is_obsolete: true
+replaced_by: HP:0100574
 
 [Term]
 id: HP:0030153
 name: Cholangiocarcinoma
 def: "Cholangiocarcinoma is a primary cancer originating in the biliary epithelium i.e., the cholangiocytes, of the extrahepatic and intrahepatic biliary ducts. It is extremely invasive, develops rapidly, often metastasizes, and has a very poor prognosis. They are slow growing tumors which spread longitudinally along the bile ducts with neural, perineural and subepithelial extension." [HPO:probinson, pmid:18536057, pmid:8268770]
-is_a: HP:0030152 ! Biliary tract neoplasm
+is_a: HP:0100574 ! Biliary tract neoplasm
 
 [Term]
 id: HP:0030154
@@ -87422,9 +87494,172 @@ is_a: HP:0009016 ! Upper limb muscle hypoplasia
 [Term]
 id: HP:0030241
 name: Hypoplasia of deltoid muscle
+alt_id: HP:0009039
+alt_id: HP:0009044
 def: "Underdevelopment of the deltoid muscle." [Neuromics:vstraub]
 synonym: "Deltoid muscle hypoplasia" EXACT []
+xref: UMLS:C1868170
 is_a: HP:0008952 ! Shoulder muscle hypoplasia
+
+[Term]
+id: HP:0030242
+name: Portal vein thrombosis
+def: "Thrombosis of the portal vein and/or its tributaries, which include the splenic vein and the sup-erior and inferior mesenteric veins." [HPO:probinson, pmid:21960890]
+comment: Portal vein thrombosis (PVT) can occur within the main portal vein, or it can occur in the branches of the portal vein within the liver itself. It can be an occluding thrombus or nonoccluding, with a clot present but continued blood flow through the vessel. The sequela of a long-standing PVT is cavernous formation of the portal vein, which represents bridging collaterals around the occlusion.
+is_a: HP:0030247 ! Splanchnic vein thrombosis
+
+[Term]
+id: HP:0030243
+name: Hepatic vein thrombosis
+def: "An obstruction in the veins of the liver caused by a blood clot (thrombosis)." [HPO:probinson]
+is_a: HP:0030247 ! Splanchnic vein thrombosis
+
+[Term]
+id: HP:0030244
+name: Maternal fever in pregnancy
+def: "The occurence of an elevated body temperature of the mother during pregnancy." [HPO:probinson, pmid:24567014]
+comment: There is evidence to suugest that maternal fever during pregnancy may negatively affect offspring healthneural tube defects, congenital heart defects, and oral clefts, in which meta-analyses suggested between a 1.5- and nearly 3-fold increased risk with fever exposure in the first trimester.
+synonym: "Maternal fever during pregnancy" EXACT []
+is_a: HP:0002686 ! Prenatal maternal abnormality
+
+[Term]
+id: HP:0030245
+name: Intrapartum fever
+def: "The occurence of maternal fever during labor." [HPO:probinson, pmid:11430951, pmid:8135133]
+comment: Intrapartum fever may indicate chorioamnionitis. Intrapartum fever is an important predictor of neonatal morbidity and infection‐related mortality.
+is_a: HP:0030244 ! Maternal fever in pregnancy
+
+[Term]
+id: HP:0030246
+name: Maternal first trimester fever
+def: "The occurence of fever in a mother during the first trimester of pregnancy." [HPO:probinson, pmid:24917213]
+is_a: HP:0030244 ! Maternal fever in pregnancy
+
+[Term]
+id: HP:0030247
+name: Splanchnic vein thrombosis
+def: "The term splanchnic vein thrombosis encompasses Budd-Chiari syndrome (hepatic vein thrombosis), extrahepatic portal vein obstruction (EHPVO), and mesenteric vein thrombosis; the word splanchnic is used to refer to the visceral organs (of the abdominal cavity)." [HPO:probinson, pmid:20532730]
+is_a: HP:0004936 ! Venous thrombosis
+
+[Term]
+id: HP:0030248
+name: Mesenteric venous thrombosis
+def: "A clot that obstructs blood flow in a mesenteric vein (the superior and the inferior mesenteric vein drain blood from the small and large intestine)." []
+comment: Mesenteric venous thrombosis may be associated with abdominal pain and bloating, diarrhea, fever, gastrointestinal bleeding, and vomiting
+is_a: HP:0030247 ! Splanchnic vein thrombosis
+
+[Term]
+id: HP:0030249
+name: Enanthema
+def: "A sudden eruptiion (rash) of the surface of a mucous membrane of the mouth or pharynx." [HPO:probinson]
+is_a: HP:0011830 ! Abnormality of oral mucosa
+
+[Term]
+id: HP:0030250
+name: Pulmonary granulomatosis
+def: "The presence of multiple granulomata (small nodular inflammatory lesions containing grouped mononuclear phagocytes) in the lung." []
+is_a: HP:0002088 ! Abnormality of the lung
+
+[Term]
+id: HP:0030251
+name: Absence of memory B cells
+def: "Complete lack of memory B cells, that is, of mature B cell type that is long-lived, readily activated upon re-encounter of its antigenic determinant, and has been selected for expression of higher affinity immunoglobulin." [HPO:probinson]
+is_a: HP:0030252 ! Absence of mature B cells
+
+[Term]
+id: HP:0030252
+name: Absence of mature B cells
+def: "Complete lack of mature B cells, that is, of B cells that have left the bone marrow." [HPO:probinson]
+is_a: HP:0010976 ! B lymphocytopenia
+
+[Term]
+id: HP:0030253
+name: Defective T cell proliferation
+def: "A reduced ability of a T cell population to expand by cell division following T cell activation. " [HPO:probinson]
+is_a: HP:0005435 ! Impaired T cell function
+
+[Term]
+id: HP:0030254
+name: Nail bed hemorrhage
+def: "Small areas of bleeding (hemorrhage) under the fingernail or toenail." [HPO:probinson]
+is_a: HP:0001597 ! Abnormality of the nail
+
+[Term]
+id: HP:0030255
+name: Large intestinal polyposis
+def: "The presence of multiple polyps in the large intestine." [HPO:probinson]
+is_a: HP:0200008 ! Intestinal polyposis
+
+[Term]
+id: HP:0030256
+name: Small intestinal polyposis
+def: "The presence of multiple polyps in the small intestine." [HPO:probinson]
+is_a: HP:0200008 ! Intestinal polyposis
+
+[Term]
+id: HP:0030257
+name: Freckled genitalia
+def: "One or more brown punctate macules on the skin of the genitalia." [HPO:probinson, pmid:23650202]
+comment: This should be differentiated from Hyperpigmented genitalia in which an area larger than a freckle or the complete external genitalia are hyperpigmented. The description should be qualified by a description of the affected part(s).
+synonym: "Genitalia, ephelides" EXACT []
+is_a: HP:0012293 ! Abnormal genital pigmentation
+
+[Term]
+id: HP:0030258
+name: Hyperpigmented genitalia
+def: "Localized or generalized increased genital pigmentation." []
+comment: This is an assessment of the relative pigmentation of the genitalia compared to the overall pigmentation of the individual. Hyperpigmentation can affect other parts of the body or be restricted to the genitalia. Genital hyperpigmentation can be generalized or localized. Localized areas of hyperpigmentation of the glans of the penis are especially common. This should be differentiated from Freckled genitalia in which one or more small, focal areas of hyperpigmentation are present. Localized hyperpigmentation can be objectively determined due to the difference from the immediate surrounding tissue color, while generalized hyperpigmentation may be more difficult to determine and is therefore a subjective manifestation. If the finding is localized, the description should be appended with a description of the affected part(s).
+synonym: "Penile melanosis" RELATED []
+is_a: HP:0012293 ! Abnormal genital pigmentation
+
+[Term]
+id: HP:0030259
+name: Hypopigmented genitalia
+def: "Localized or generalized decreased genital pigmentation." [HPO:probinson, pmid:23650202]
+comment: This is an assessment of the relative pigmentation of the genitalia compared to the overall pigmentation of the individual. Hypopigmentation can affect other parts of the body or be restricted to the genitalia. Genital hypopigmentation can be generalized or localized. Localized hypopigmentation can be objectively determined due to the difference from the immediate surrounding tissue color, while generalized hypopigmentation may be more difficult to determine and is therefore a subjective manifestation.
+is_a: HP:0012293 ! Abnormal genital pigmentation
+
+[Term]
+id: HP:0030260
+name: Microphallus
+def: "Length of penis more than 2 SD below the mean for age accompanied by hypospadias." [HPO:probinson, pmid:23650202]
+comment: Traditionally a distinction is made between a Short penis, a short penis with otherwise normal anatomy, versus microphallus, a short penis with hypospadias. Penile length is the distance between the midline attachment of the gently stretched, flaccid penis above the pubic symphysis and tip of the glans. A short penis should be differentiated from an inconspicuous penis, for instance due to excessive suprapubic fat (“buried”). We also recognize that shortness of a penis is defined by some subspecialists as penile length more than 2.5 SD below the mean.
+is_a: HP:0008736 ! Hypoplasia of penis
+
+[Term]
+id: HP:0030261
+name: Absent penis
+def: "Lack of recognizable penile structures." [HPO:probinson, pmid:23650202]
+comment: Absence of the penis is always accompanied by abnormal position of the meatus (usually in the perineum, sometimes in the rectum), may be accompanied by Cryptorchidism, and is often associated with non-genital anomalies, which all should be coded separately. Absent penis should be differentiated from a penis concealed within pre-pubic fat tissue.
+synonym: "Aphallia" EXACT []
+is_a: HP:0000036 ! Abnormality of the penis
+
+[Term]
+id: HP:0030262
+name: Narrow penis
+def: "Penile width more than 2 standard deviations (SD) below the mean for age. Alternatively circumference of the flaccid penis more than 2 SD below the mean for age. Alternatively, apparently decreased penile width for age." [HPO:probinson, pmid:23650202]
+comment: Penile width is the distance between left and right side of the flaccid penis at the attachment to the skin above the pubic symphysis.
+is_a: HP:0000036 ! Abnormality of the penis
+
+[Term]
+id: HP:0030263
+name: Torsion of the penis
+def: "Rotated position of the glans, with or without the penile shaft, of 30 degrees or more." [HPO:probinson, pmid:23650202]
+comment: Penile torsion is defined traditionally as being between 30 and 180 degrees rotation. Penile torsion is usually counter clockwise and is often associated with Chordee and Hypospadias, which should be coded separately.
+is_a: HP:0000036 ! Abnormality of the penis
+
+[Term]
+id: HP:0030264
+name: Webbed penis
+def: "Ventral skinfold extending from penis to scrotum." [pmid:23650202]
+comment: The distal limit of the skinfold can be located on the penile shaft or the tip of the penis.
+is_a: HP:0000036 ! Abnormality of the penis
+
+[Term]
+id: HP:0030265
+name: Wide penis
+def: "Distance between left and right side of the flaccid penis at the attachment to the skin above the pubic symphysis more than 2 standard deviations above the mean for age." [pmid:23650202]
+is_a: HP:0030264 ! Webbed penis
 
 [Term]
 id: HP:0040004
@@ -87594,6 +87829,9 @@ replaced_by: HP:0012746
 [Term]
 id: HP:0040039
 name: Onycholysis of fingernails
+synonym: "ONYCHOLYSIS OF FINGERNAIL" EXACT []
+synonym: "ONYCHOLYSIS OF FINGERNAIL" RELATED [HPO:skoehler]
+synonym: "ONYCHOLYSIS OF FINGERNAILS" RELATED [HPO:skoehler]
 is_a: HP:0001231 ! Abnormality of the fingernails
 is_a: HP:0001806 ! Onycholysis
 
@@ -87877,16 +88115,19 @@ is_a: HP:0010722 ! Asymmetry of the ears
 [Term]
 id: HP:0040095
 name: Neoplasm of the outer ear
+def: "A tumor (abnormal growth of tissue) of the outer ear." [HPO:probinson]
 is_a: HP:0012780 ! Neoplasm of the ear
 
 [Term]
 id: HP:0040096
 name: Neoplasm of the inner ear
+def: "A tumor (abnormal growth of tissue) of the inner ear." [HPO:probinson]
 is_a: HP:0012780 ! Neoplasm of the ear
 
 [Term]
 id: HP:0040097
 name: Neoplasm of the ceruminal gland
+def: "A tumor (abnormal growth of tissue) of the ceruminal gland." [HPO:probinson]
 synonym: "Adenoma of the ceruminous gland" EXACT []
 synonym: "Ceruminoma" EXACT []
 synonym: "Ceruminous adenoma" EXACT []
@@ -88086,6 +88327,88 @@ name: Abnormal transferrin saturation
 is_a: HP:0011031 ! Abnormality of iron homeostasis
 
 [Term]
+id: HP:0040137
+name: Comodogenic acne
+is_a: HP:0001061 ! Acne
+
+[Term]
+id: HP:0040138
+name: Mucinous histiocytosis
+synonym: "HISTIOCYTOSIS, MUCINOUS" EXACT []
+is_a: HP:0100727 ! Histiocytosis
+
+[Term]
+id: HP:0040139
+name: Lipogranulomatosis
+def: "Yellow nodules of lipoid material are deposited in the skin and mucosae. This gives rise to granulomatous reactions." []
+comment: Usually caused by a faulty lipid metabolism
+is_a: HP:0002955 ! Granulomatosis
+is_a: HP:0004356 ! Abnormality of lysosomal metabolism
+
+[Term]
+id: HP:0040140
+name: Degeneration of the striatum
+is_a: HP:0002180 ! Neurodegeneration
+is_a: HP:0010994 ! Abnormality of the striatum
+
+[Term]
+id: HP:0040141
+name: Tardive dyskinesia
+comment: the involuntary movements are tardive, meaning they have a slow or belated onset
+is_a: HP:0100660 ! Dyskinesia
+
+[Term]
+id: HP:0040142
+name: 5-oxoprolinase deficiency
+is_a: HP:0001939 ! Abnormality of metabolism/homeostasis
+
+[Term]
+id: HP:0040143
+name: Dystopic os odontoideum
+is_a: HP:0005667 ! Os odontoideum
+
+[Term]
+id: HP:0040144
+name: L-2-hydroxyglutaric aciduria
+is_a: HP:0003215 ! Dicarboxylic aciduria
+
+[Term]
+id: HP:0040145
+name: Dicarboxylic acidemia
+is_a: HP:0001941 ! Acidosis
+is_a: HP:0010995 ! Abnormality of dicarboxylic acid metabolism
+
+[Term]
+id: HP:0040146
+name: D-2-hydroxyglutaric acidemia
+is_a: HP:0040145 ! Dicarboxylic acidemia
+
+[Term]
+id: HP:0040147
+name: L-2-hydroxyglutaric acidemia
+is_a: HP:0040145 ! Dicarboxylic acidemia
+
+[Term]
+id: HP:0040148
+name: Cortical myoclonus
+is_a: HP:0001336 ! Myoclonus
+
+[Term]
+id: HP:0040149
+name: Woolly scalp hair
+is_a: HP:0002224 ! Woolly hair
+
+[Term]
+id: HP:0040150
+name: Epiblepharon of upper lid
+is_a: HP:0011225 ! Epiblepharon
+
+[Term]
+id: HP:0040151
+name: Epiblepharon of lower lid
+is_a: HP:0011225 ! Epiblepharon
+
+[Term]
 id: HP:0045001
 name: Abnormal ossification of the trapezium
 is_a: HP:0004252 ! Abnormality of the trapezium
@@ -88181,6 +88504,30 @@ id: HP:0045025
 name: Small palpebral fissure
 synonym: "SMALL PALPEBRAL FISSURES" EXACT [HPO:skoehler]
 is_a: HP:0200007 ! Abnormal size of the palpebral fissures
+
+[Term]
+id: HP:0045026
+name: Abnormality of the mediastinum
+alt_id: HP:0100722
+is_a: HP:0045027 ! Abnormality of the thoracic cavity
+
+[Term]
+id: HP:0045027
+name: Abnormality of the thoracic cavity
+is_a: HP:0000118 ! Phenotypic abnormality
+
+[Term]
+id: HP:0045028
+name: Type III lissencephaly
+comment: See OMIM entry 601160
+synonym: "LISSENCEPHALY TYPE III" EXACT []
+is_a: HP:0001339 ! Lissencephaly
+
+[Term]
+id: HP:0045029
+name: Eosinophilic fasciitis
+is_a: HP:0001880 ! Eosinophilia
+is_a: HP:0100537 ! Fasciitis
 
 [Term]
 id: HP:0100000
@@ -88312,7 +88659,7 @@ creation_date: 2010-05-14T09:41:55Z
 [Term]
 id: HP:0100012
 name: Neoplasm of the eye
-def: "The presence of a neoplasm of the eye." [HPO:probinson]
+def: "A tumor (abnormal growth of tissue) of the eye." [HPO:probinson]
 synonym: "Neoplasia of the eye" RELATED []
 is_a: HP:0011793 ! Neoplasm by anatomical site
 is_a: HP:0012372 ! Abnormal eye morphology
@@ -88324,7 +88671,7 @@ creation_date: 2010-05-14T09:43:34Z
 id: HP:0100013
 name: Neoplasm of the breast
 alt_id: HP:0010623
-def: "A neoplasm of the breast." [HPO:probinson]
+def: "A tumor (abnormal growth of tissue) of the breast." [HPO:probinson]
 synonym: "Neoplasia of the breast" RELATED []
 synonym: "Tumours of the breast" RELATED []
 xref: MeSH:D001943 "Breast neoplasms"
@@ -88518,7 +88865,7 @@ creation_date: 2010-06-10T10:25:46Z
 [Term]
 id: HP:0100031
 name: Neoplasm of the thyroid gland
-def: "The presence of a neoplasm of the thyroid gland." [HPO:probinson]
+def: "A tumor (abnormal growth of tissue) of the thyroid gland." [HPO:probinson]
 synonym: "Neoplasia of the thyroid gland" RELATED []
 is_a: HP:0011772 ! Abnormality of thyroid morphology
 is_a: HP:0100568 ! Neoplasm of the endocrine system
@@ -90370,6 +90717,7 @@ creation_date: 2010-07-15T03:56:58Z
 id: HP:0100258
 name: Preaxial polydactyly
 def: "A form of polydactyly in which the extra digit or digits are localized on the side of the thumb or great toe." [HPO:probinson]
+synonym: "Polydactyly, preaxial" EXACT [HPO:skoehler]
 is_a: HP:0010442 ! Polydactyly
 created_by: doelkens
 creation_date: 2010-07-20T11:00:32Z
@@ -90459,7 +90807,7 @@ xref: SNOMEDCT:28041003 "Congenital lip pits"
 xref: UMLS:C0266092 "Congenital lip pits"
 xref: UMLS:C0341059 "Lip pits"
 is_a: HP:0000159 ! Abnormality of the lip
-is_a: HP:0100276 ! Skin pits
+is_a: HP:0100276 ! Skin pit
 created_by: doelkens
 creation_date: 2010-07-20T04:06:32Z
 
@@ -90537,7 +90885,9 @@ creation_date: 2010-08-02T01:22:19Z
 
 [Term]
 id: HP:0100276
-name: Skin pits
+name: Skin pit
+def: "A small, skin-lined tract that leads from the surface to deep within the tissues." []
+synonym: "Skin pits" RELATED []
 is_a: HP:0011355 ! Localized skin lesion
 created_by: doelkens
 creation_date: 2010-08-05T10:51:32Z
@@ -90547,7 +90897,7 @@ id: HP:0100277
 name: Periauricular skin pits
 def: "Benign congenital lesions of the periauricular soft tissue consisting of a blind-ending narrow tube or pit." [HPO:sdoelken]
 is_a: HP:0000383 ! Abnormality of periauricular region
-is_a: HP:0100276 ! Skin pits
+is_a: HP:0100276 ! Skin pit
 created_by: doelkens
 creation_date: 2010-08-05T10:54:32Z
 
@@ -90708,7 +91058,6 @@ creation_date: 2010-08-10T02:21:34Z
 [Term]
 id: HP:0100300
 name: Desmin bodies
-synonym: "Muscle fiber desmin-reactive inclusion bodies" EXACT []
 is_a: HP:0100303 ! Muscle fiber cytoplasmatic inclusion bodies
 created_by: doelkens
 creation_date: 2010-08-10T02:28:49Z
@@ -92322,6 +92671,8 @@ creation_date: 2010-12-17T06:13:04Z
 [Term]
 id: HP:0100508
 name: Abnormality of vitamin metabolism
+def: "An anomaly in the metabolism of a vitamin." [HPO:probinson]
+comment: Vitamins are organic substances that are essential in minute quantities and not produced within the body, instead being present in natural foodstuffs. Vitamins act as coenzymes or precursors of coenzymes in the regulation of metabolic processes.
 is_a: HP:0001939 ! Abnormality of metabolism/homeostasis
 created_by: doelkens
 creation_date: 2010-12-17T06:17:22Z
@@ -92433,7 +92784,7 @@ creation_date: 2010-12-20T10:42:40Z
 [Term]
 id: HP:0100521
 name: Neoplasm of the thymus
-def: "A benign or malignant neoplasm (tumour) originating in the thymus." [HPO:probinson]
+def: "A tumor (abnormal growth of tissue) of the thymus." [HPO:probinson]
 is_a: HP:0000777 ! Abnormality of the thymus
 is_a: HP:0000818 ! Abnormality of the endocrine system
 is_a: HP:0011793 ! Neoplasm by anatomical site
@@ -92686,7 +93037,7 @@ creation_date: 2010-12-20T06:50:32Z
 [Term]
 id: HP:0100544
 name: Neoplasm of the heart
-def: "A neoplasm of the heart." [HPO:probinson]
+def: "A tumor (abnormal growth of tissue) of the heart." [HPO:probinson]
 synonym: "Cardiac neoplasia" RELATED []
 synonym: "Cardiac neoplasm" EXACT []
 xref: MeSH:D006338 "Heart Neoplasms"
@@ -92899,7 +93250,7 @@ creation_date: 2010-12-21T04:41:35Z
 [Term]
 id: HP:0100568
 name: Neoplasm of the endocrine system
-def: "The presence of a neoplasm (tumour) in the endocrine system." [HPO:probinson]
+def: "A tumor (abnormal growth of tissue) of the endocrine system." [HPO:probinson]
 synonym: "Endocrine neoplasia" EXACT []
 is_a: HP:0000818 ! Abnormality of the endocrine system
 is_a: HP:0011793 ! Neoplasm by anatomical site
@@ -92956,7 +93307,8 @@ creation_date: 2010-12-21T05:14:00Z
 [Term]
 id: HP:0100574
 name: Biliary tract neoplasm
-def: "A neoplasm of the biliary system." [HPO:probinson]
+alt_id: HP:0030152
+def: "A tumor (abnormal growth of tissue) of the biliary system." [HPO:probinson]
 synonym: "Neoplasia of the biliary tract" RELATED []
 xref: MeSH:D001661 "Biliary Tract Neoplasms"
 is_a: HP:0007378 ! Neoplasm of the gastrointestinal tract
@@ -93179,6 +93531,8 @@ creation_date: 2010-12-27T05:07:16Z
 id: HP:0100598
 name: Pulmonary edema
 def: "Fluid accumulation in the lungs." [HPO:sdoelken]
+synonym: "Lung edema" EXACT []
+synonym: "Pulmonary oedema" EXACT []
 xref: MeSH:D011654 "Pulmonary edema"
 is_a: HP:0000969 ! Edema
 is_a: HP:0002088 ! Abnormality of the lung
@@ -93187,8 +93541,10 @@ creation_date: 2010-12-27T05:10:09Z
 
 [Term]
 id: HP:0100599
-name: Diphallia
-def: "Duplication of the penis." [HPO:sdoelken]
+name: Bifid penis
+def: "Two penile structures, separated from the tip to the base of the shaft." [HPO:sdoelken, pmid:23650202]
+comment: In individuals with complete duplication often one will find Hypospadias, Epispadias, Bladder exstrophy, or Bifid scrotum, which should be coded separately, as well as urinary tract duplications, renal anomalies, and gastrointestinal duplications. The terms indicate the presence of (part of) two penises, but do not indicate whether they are caused by splitting or double formation.
+synonym: "Diphallia" EXACT []
 synonym: "Penile duplication" EXACT []
 is_a: HP:0000036 ! Abnormality of the penis
 created_by: doelkens
@@ -93197,7 +93553,8 @@ creation_date: 2010-12-27T05:17:57Z
 [Term]
 id: HP:0100600
 name: Penoscrotal transposition
-def: "A partial or complete positional exchange between the penis and the scrotum." [HPO:sdoelken]
+def: "A partial or complete positional exchange between the penis and the scrotum, with positioning of the scrotum superior to the penis." [HPO:sdoelken]
+synonym: "Prepenile scrotum" EXACT []
 is_a: HP:0000036 ! Abnormality of the penis
 is_a: HP:0000045 ! Abnormality of the scrotum
 created_by: doelkens
@@ -93234,7 +93591,7 @@ creation_date: 2010-12-27T05:27:41Z
 [Term]
 id: HP:0100604
 name: Neoplasm of the lip
-def: "A neoplasm of the lips." [HPO:probinson]
+def: "A tumor (abnormal growth of tissue) of the lip." [HPO:probinson]
 synonym: "Neoplasia of the lip" RELATED []
 synonym: "Tumor of the lip" RELATED []
 is_a: HP:0000159 ! Abnormality of the lip
@@ -93254,7 +93611,7 @@ creation_date: 2010-12-27T06:07:16Z
 [Term]
 id: HP:0100606
 name: Neoplasm of the respiratory system
-def: "A benign or malignant neoplasm (tumour) originating in the respiratory system." [HPO:probinson]
+def: "A tumor (abnormal growth of tissue) of the respiratory system." [HPO:probinson]
 is_a: HP:0002086 ! Abnormality of the respiratory system
 is_a: HP:0011793 ! Neoplasm by anatomical site
 property_value: HP:0040005 "A benign or malignant `neoplasm` (MPATH:218) (tumour) originating in the respiratory system." xsd:string {xref="HPO:probinson"}
@@ -93343,7 +93700,7 @@ creation_date: 2010-12-28T11:14:59Z
 [Term]
 id: HP:0100615
 name: Ovarian neoplasm
-def: "The presence of a neoplasm the ovary." [HPO:probinson]
+def: "A tumor (abnormal growth of tissue) of the ovary." [HPO:probinson]
 synonym: "Neoplasm of the o" EXACT []
 synonym: "Ovarian neoplasia" RELATED []
 xref: MeSH:D010051 "Ovarian Neoplasms"
@@ -93495,7 +93852,7 @@ creation_date: 2010-12-29T02:23:48Z
 [Term]
 id: HP:0100631
 name: Neoplasm of the adrenal gland
-def: "The presence of a neoplasm of the adrenal gland." [DDD:rscott]
+def: "A tumor (abnormal growth of tissue) of the adrenal gland." [DDD:rscott]
 synonym: "Adrenal neoplasia" EXACT []
 is_a: HP:0011732 ! Abnormality of adrenal morphology
 is_a: HP:0100568 ! Neoplasm of the endocrine system
@@ -93507,7 +93864,6 @@ creation_date: 2010-12-29T02:27:47Z
 id: HP:0100632
 name: Pulmonary sequestration
 def: "The presence of a piece lung tissue which is not attached to the pulmonary blood supply and does not communicate with the other lung tissue (not connected to the standard bronchial airways and not performing a function in respiration)." [HPO:sdoelken]
-synonym: "Bronchopulmonary sequestration" EXACT []
 synonym: "Cystic lung lesion" RELATED []
 is_a: HP:0002101 ! Abnormal lung lobation
 created_by: doelkens
@@ -93565,9 +93921,11 @@ creation_date: 2010-12-29T05:31:36Z
 
 [Term]
 id: HP:0100638
-name: Neoplasia of the pharynx
+name: Neoplasm of the pharynx
 alt_id: HP:0030073
 def: "A neoplasm originating in the pharynx." []
+comment: Tumors of pharynx may present with nonspecific findings such as otalgia or unilateral otitis media.
+synonym: "Neoplasia of the pharynx" EXACT []
 synonym: "Pharyngeal neoplasm" EXACT []
 xref: MeSH:D010610
 is_a: HP:0000600 ! Abnormality of the pharynx
@@ -93668,7 +94026,7 @@ creation_date: 2010-12-29T06:08:53Z
 [Term]
 id: HP:0100648
 name: Neoplasm of the tongue
-def: "A neoplasm of the tongue." [HPO:probinson]
+def: "A tumor (abnormal growth of tissue) of the tongue." [HPO:probinson]
 xref: UMLS:C0040411 "Tongue neoplasm"
 is_a: HP:0000157 ! Abnormality of the tongue
 is_a: HP:0100649 ! Neoplasm of the oral cavity
@@ -93679,7 +94037,7 @@ creation_date: 2010-12-29T06:14:32Z
 [Term]
 id: HP:0100649
 name: Neoplasm of the oral cavity
-def: "A neoplasm occurring in the oral cavity." [HPO:probinson]
+def: "A tumor (abnormal growth of tissue) of the oral cavity." [HPO:probinson]
 is_a: HP:0000163 ! Abnormality of the oral cavity
 is_a: HP:0011793 ! Neoplasm by anatomical site
 property_value: HP:0040005 "A `neoplasm` (MPATH:218) occurring in the `oral cavity` (FMA:20292)." xsd:string {xref="HPO:probinson"}
@@ -93689,7 +94047,7 @@ creation_date: 2010-12-29T06:15:14Z
 [Term]
 id: HP:0100650
 name: Vaginal neoplasm
-def: "The presence of a neoplasm of the vagina." [HPO:probinson]
+def: "A tumor (abnormal growth of tissue) of the vagina." [HPO:probinson]
 synonym: "Vaginal neoplasia" RELATED []
 xref: MeSH:D014625 "Vaginal Neoplasms"
 xref: UMLS:C0042258 "Vaginal neoplasm"
@@ -93755,6 +94113,8 @@ creation_date: 2010-12-30T10:07:54Z
 [Term]
 id: HP:0100658
 name: Cellulitis
+def: "A bacterial infection and inflammation of the skin und subcutaneous tissues." []
+comment: In contrast to impetigo, which is a very superficial skin infection, cellulitis involves both the dermis and the underlying subcutaneous tissue.
 subset: hposlim_core
 xref: MeSH:D002481 "Cellulitis"
 xref: SNOMEDCT:385627004 "Cellulitis"
@@ -93964,7 +94324,7 @@ creation_date: 2010-12-30T02:09:37Z
 [Term]
 id: HP:0100684
 name: Salivary gland neoplasm
-def: "A neoplasm originating in a salivary gland." [HPO:probinson]
+def: "A tumor (abnormal growth of tissue) of a salivary gland." [HPO:probinson]
 synonym: "Salivary gland neoplasia" EXACT []
 xref: MeSH:D012468 "Salivary gland neoplasms"
 is_a: HP:0010286 ! Abnormality of the salivary glands
@@ -94256,10 +94616,9 @@ creation_date: 2011-06-06T02:17:54Z
 [Term]
 id: HP:0100721
 name: Mediastinal lymphadenopathy
-alt_id: HP:0100722
 def: "Swelling of lymph nodes within the mediastinum, the central compartment of the thoracic cavities that contains the heart and the great vessels, the esophagus, and trachea and other structures including lymph nodes." [HPO:probinson]
-synonym: "Abnormality of the mediastinum" EXACT []
 is_a: HP:0002716 ! Lymphadenopathy
+is_a: HP:0045026 ! Abnormality of the mediastinum
 created_by: doelkens
 creation_date: 2011-06-06T02:26:55Z
 
@@ -94356,7 +94715,7 @@ creation_date: 2011-06-06T05:06:26Z
 [Term]
 id: HP:0100733
 name: Neoplasm of the parathyroid gland
-def: "The presence of a neoplasm (tumour) in the parathyroid gland." [HPO:probinson]
+def: "A tumor (abnormal growth of tissue) of the parathyroid gland." [HPO:probinson]
 synonym: "Parathyroid neoplasia" EXACT []
 is_a: HP:0011766 ! Abnormality of the parathyroid morphology
 is_a: HP:0100568 ! Neoplasm of the endocrine system
@@ -94443,6 +94802,7 @@ creation_date: 2011-06-06T06:24:45Z
 [Term]
 id: HP:0100745
 name: Abnormality of the humeroulnar joint
+def: "An anomaly of the joint between the trochlear notch of ulna and the trochlea of humerus, which is part of the elbow joint." [HPO:probinson]
 is_a: HP:0009811 ! Abnormality of the elbow
 created_by: doelkens
 creation_date: 2011-06-06T06:25:05Z
@@ -94500,6 +94860,7 @@ creation_date: 2011-06-06T06:38:53Z
 [Term]
 id: HP:0100751
 name: Esophageal neoplasm
+def: "A tumor (abnormal growth of tissue) of the esophagus." []
 xref: MeSH:D004938 "Esophageal Neoplasms"
 xref: UMLS:C0014859 "Esophageal neoplasm"
 is_a: HP:0002031 ! Abnormality of the esophagus
@@ -94511,6 +94872,9 @@ creation_date: 2011-06-06T06:44:54Z
 [Term]
 id: HP:0100752
 name: Abnormal liver lobulation
+def: "Formation of abnormal lobules (small masses of tissue) in the liver." [HPO:probinson]
+synonym: "Anomalous liver lobulation" EXACT []
+synonym: "Hepatic anomalous lobulation" EXACT []
 is_a: HP:0030146 ! Abnormal liver parenchyma morphology
 created_by: doelkens
 creation_date: 2011-06-06T06:47:05Z
@@ -94767,6 +95131,10 @@ creation_date: 2011-06-07T05:52:24Z
 [Term]
 id: HP:0100783
 name: Breast aplasia
+def: "Failure to develop and congenital absence of the breast." []
+synonym: "Absent breast" EXACT []
+synonym: "Congenital absence of breast" EXACT []
+synonym: "Mammary gland aplasia" EXACT []
 is_a: HP:0010311 ! Aplasia/Hypoplasia of the breasts
 created_by: doelkens
 creation_date: 2011-06-07T06:02:34Z
@@ -94883,7 +95251,7 @@ creation_date: 2011-06-08T04:23:53Z
 [Term]
 id: HP:0100799
 name: Neoplasm of the middle ear
-def: "A neoplasm  of the middle ear." [HPO:probinson]
+def: "A tumor (abnormal growth of tissue) of the middle ear." [HPO:probinson]
 synonym: "Neoplasia of the middle ear" EXACT []
 is_a: HP:0000370 ! Abnormality of the middle ear
 is_a: HP:0012780 ! Neoplasm of the ear
@@ -94911,6 +95279,7 @@ creation_date: 2011-06-09T11:46:59Z
 [Term]
 id: HP:0100802
 name: Malposition of the stomach
+def: "Abnormal anatomical location of the stomach. This feature may be due to intestinal malrotation." [HPO:probinson, pmid:16465538]
 synonym: "Gastric ectopia" EXACT []
 synonym: "Gastric malposition" EXACT []
 is_a: HP:0002577 ! Abnormality of the stomach
@@ -94970,6 +95339,8 @@ creation_date: 2011-06-09T01:13:15Z
 [Term]
 id: HP:0100808
 name: Gastric diverticulum
+def: "An outpouching of the gastric wall." [HPO:probinson, pmid:22257431]
+comment: Gastric diverticulum may be asymptomatic or may present with a vague sensation of fullness or discomfort in the upper abdomen, or with acute upper gastrointestinal bleed or perforation.
 synonym: "Stomach diverticulum" EXACT []
 xref: MeSH:D013273 "Diverticulum, Stomach"
 xref: SNOMEDCT:75198005 "Gastric diverticulum"
@@ -94980,7 +95351,9 @@ creation_date: 2011-06-09T01:43:31Z
 
 [Term]
 id: HP:0100809
-name: Hypersensibility of scalp
+name: Scalp tenderness
+def: "Pain or discomfort of the scalp elicited by palpation." [HPO:probinson]
+synonym: "Scalp hypersensitivity" EXACT []
 xref: MEDRA:10039521 "Scalp tenderness"
 xref: SNOMEDCT:75851004 "Scalp tenderness"
 xref: UMLS:C0151206 "Scalp tenderness"
@@ -95137,6 +95510,7 @@ creation_date: 2011-06-09T05:18:41Z
 [Term]
 id: HP:0100826
 name: Neoplasm of the nail
+def: "A tumor (abnormal growth of tissue) of the nail." [HPO:probinson]
 is_a: HP:0001597 ! Abnormality of the nail
 is_a: HP:0011793 ! Neoplasm by anatomical site
 created_by: doelkens
@@ -95259,6 +95633,7 @@ creation_date: 2011-06-09T06:35:07Z
 [Term]
 id: HP:0100839
 name: Hepatic agenesis
+def: "Absence of the liver owing to a failure of the liver to develop." [HPO:probinson]
 synonym: "Liver agenesis" EXACT []
 is_a: HP:0001392 ! Abnormality of the liver
 created_by: doelkens
@@ -95278,6 +95653,8 @@ creation_date: 2011-06-09T06:40:51Z
 [Term]
 id: HP:0100841
 name: Microgastria
+def: "A developmental anomaly wtih a small tubular or saccular midline stomach." [pmid:10067744]
+comment: Patients with microgastria usually have poor growth, inadequate food consumption, or a complication of the small gastric cavity and gastroesophageal reflux, including frequent vomiting or pneumonia.
 is_a: HP:0002577 ! Abnormality of the stomach
 created_by: doelkens
 creation_date: 2011-06-09T06:42:10Z
@@ -95322,7 +95699,12 @@ creation_date: 2011-06-09T06:54:40Z
 
 [Term]
 id: HP:0100847
-name: Palmoplantar pustules
+name: Palmoplantar pustulosis
+def: "A chronic, relapsing, pustular eruption that is localized to the palms and soles." [HPO:probinson, pmid:23209116]
+comment: There are recurrent and painful eruptions of pustules on the palms and the soles of feet that may resolve with red–brown discoloration.
+synonym: "Palmoplantar pustules" EXACT []
+synonym: "Pustulosis of palms and soles" EXACT []
+synonym: "Pustulosis palmaris et plantaris" EXACT []
 xref: MEDRA:10050185 "Palmoplantar pustulosis"
 xref: UMLS:C0030246 "Pustulosis of Palms and Soles"
 is_a: HP:0011356 ! Regional abnormality of skin
@@ -95332,8 +95714,9 @@ creation_date: 2011-06-09T07:07:06Z
 
 [Term]
 id: HP:0100848
-name: Neoplasia of the male external genitalia
-def: "A Neoplasia of the Male external genitalia ." [HPO:sdoelken]
+name: Neoplasm of the male external genitalia
+def: "A tumor (abnormal growth of tissue) of the male external genitalia." [HPO:sdoelken]
+synonym: "Neoplasia of the male external genitalia" EXACT []
 is_a: HP:0000032 ! Abnormality of male external genitalia
 is_a: HP:0010787 ! Genital neoplasm
 property_value: HP:0040005 "A `Neoplasia` (HP:0002664) of the `Male external genitalia` (FMA:45642) ." xsd:string {xref="HPO:sdoelken"}
@@ -95342,17 +95725,21 @@ creation_date: 2011-06-17T01:33:06Z
 
 [Term]
 id: HP:0100849
-name: Neoplasia of the scrotum
+name: Neoplasm of the scrotum
+def: "A tumor (abnormal growth of tissue) of the scrotum." [HPO:probinson]
+synonym: "Neoplasia of the scrotum" EXACT []
 is_a: HP:0000045 ! Abnormality of the scrotum
-is_a: HP:0100848 ! Neoplasia of the male external genitalia
+is_a: HP:0100848 ! Neoplasm of the male external genitalia
 created_by: doelkens
 creation_date: 2011-06-17T01:37:49Z
 
 [Term]
 id: HP:0100850
-name: Neoplasia of the penis
+name: Neoplasm of the penis
+def: "A tumor (abnormal growth of tissue) of the penis." [HPO:probinson]
+synonym: "Neoplasia of the penis" EXACT []
 is_a: HP:0000036 ! Abnormality of the penis
-is_a: HP:0100848 ! Neoplasia of the male external genitalia
+is_a: HP:0100848 ! Neoplasm of the male external genitalia
 created_by: doelkens
 creation_date: 2011-06-17T01:38:16Z
 
@@ -95775,8 +96162,8 @@ alt_id: HP:0100897
 def: "The presence of multiple rectal hyperplastic/adenomatous polyps." [HPO:probinson]
 synonym: "Multiple rectal polyps" EXACT []
 synonym: "Rectal polyps" EXACT []
+is_a: HP:0030255 ! Large intestinal polyposis
 is_a: HP:0100743 ! Neoplasm of the rectum
-is_a: HP:0200008 ! Intestinal polyposis
 created_by: doelkens
 creation_date: 2011-12-01T05:33:49Z
 
@@ -96211,7 +96598,7 @@ creation_date: 2011-12-12T10:02:15Z
 id: HP:0100958
 name: Narrow foramen obturatorium
 def: "Decreased width of the foramen obturatorium. The foramen obturatorium (also known as the obturator foramen) is a hole located between the ischium and pubis bones of the pelvis." [HPO:probinson]
-is_a: HP:0003172 ! Abnormality of the pubic bones
+is_a: HP:0003172 ! Abnormality of the pubic bone
 is_a: HP:0003174 ! Abnormality of the ischium
 property_value: HP:0040005 "Decreased width of the `foramen obturatorium` (FMA:16999). The foramen obturatorium (also known as the obturator foramen) is a hole located between the ischium and pubis bones of the pelvis." xsd:string {xref="HPO:probinson"}
 created_by: doelkens
@@ -96345,7 +96732,7 @@ creation_date: 2010-06-09T11:52:21Z
 [Term]
 id: HP:0200013
 name: Neoplasm of fatty tissue
-def: "A benign or malignant neoplasm (tumour) of adipose tissue." [HPO:sdoelken]
+def: "A tumor (abnormal growth of tissue) of adipose tissue." [HPO:sdoelken]
 is_a: HP:0009124 ! Abnormality of adipose tissue
 is_a: HP:0011793 ! Neoplasm by anatomical site
 property_value: HP:0040005 "A benign or malignant `neoplasm` (MPATH:218) (tumour) of adipose tissue." xsd:string {xref="HPO:sdoelken"}
@@ -96472,6 +96859,7 @@ creation_date: 2010-06-17T02:32:36Z
 [Term]
 id: HP:0200029
 name: Vasculitis in the skin
+synonym: "Cutaneous vasculitis" EXACT [HPO:skoehler]
 is_a: HP:0002633 ! Vasculitis
 is_a: HP:0011276 ! Vascular skin abnormality
 created_by: sebastiankohler
@@ -96709,8 +97097,10 @@ created_by: sebastiankohler
 [Term]
 id: HP:0200063
 name: Colorectal polyps
+def: "Multiple abnormal growths that arise from the lining of the large intestine (colon or rectum) and protrude into the intestinal lumen. " []
+synonym: "Colorectal polyposis" RELATED []
+is_a: HP:0030255 ! Large intestinal polyposis
 is_a: HP:0100743 ! Neoplasm of the rectum
-is_a: HP:0200008 ! Intestinal polyposis
 created_by: sebastiankohler
 creation_date: 2013-05-31T01:19:31Z
 
@@ -96825,6 +97215,7 @@ creation_date: 2013-06-04T03:04:56Z
 [Term]
 id: HP:0200096
 name: Triangular-shaped open mouth
+def: "A facial appearance characterized by a permanently or nearly permanently opened mouth, in which the upper lip is tented in a way that the opened mouth has the appearance of a triangle." [HPO:probinson]
 is_a: HP:0000194 ! Open mouth
 is_a: HP:0000207 ! Triangular mouth
 created_by: sebastiankohler
@@ -97054,13 +97445,6 @@ is_a: HP:0001718 ! Mitral stenosis
 is_a: HP:0004382 ! Mitral valve calcification
 created_by: sebastiankohler
 creation_date: 2013-06-11T11:30:06Z
-
-[Term]
-id: HP:0200130
-name: Congestive cardiomyopathy
-is_a: HP:0001638 ! Cardiomyopathy
-created_by: sebastiankohler
-creation_date: 2013-06-11T11:31:51Z
 
 [Term]
 id: HP:0200133
@@ -97314,4 +97698,34 @@ id: HP:0430008
 name: Accessory eyelid
 def: "The presence of more than the normal number of eyelids." [GOC:MG]
 is_a: HP:0000492 ! Abnormality of the eyelid
+
+[Term]
+id: HP:0430009
+name: Hypoplasia of eyelid
+def: "Developmental hypoplasia of the eyelid." [GOC:MG]
+is_a: HP:0000492 ! Abnormality of the eyelid
+
+[Term]
+id: HP:0430010
+name: Microblepharia
+def: "Abnormal shortness of the vertical dimensions of the eyelids." [http://medical-dictionary.thefreedictionary.com/microblepharia]
+is_a: HP:0000492 ! Abnormality of the eyelid
+
+[Term]
+id: HP:0430011
+name: Defect of palpebral conjunctiva
+def: "An abnormality of the palpebral conjunctiva." [GOC:MG]
+is_a: HP:0000492 ! Abnormality of the eyelid
+
+[Term]
+id: HP:0430012
+name: Incomplete ossification of palatine bone
+def: "Failure to complete ossification (maturation and calcification) of the palatine bone." [GOC:MG]
+is_a: HP:0430003 ! Abnormality of the palatine bone
+
+[Term]
+id: HP:0430013
+name: Absent palatine bone ossification
+def: "Lack of formation of the palatine bone." [GOC:MG]
+is_a: HP:0430003 ! Abnormality of the palatine bone
 
